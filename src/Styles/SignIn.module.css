@@ -1,0 +1,30 @@
+.SignIn {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  color: #232440;
+}
+.BackLogo {
+  color: #665af0;
+  font-size: 30px;
+}
+.Label {
+  font-size: 14px;
+  color: #6e6e82;
+}
+.Input {
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 9px;
+  width: 100%;
+  margin-top: 8px;
+  background-color: #f8f8f8;
+}
+.Input:focus {
+  border: 2px solid #665af0;
+  outline: none;
+  background-color: rgba(20, 0, 255, 0.06);
+}
+.Checkbox {
+  border: 1px solid #665af0;
+}
