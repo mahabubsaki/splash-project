@@ -1,6 +1,6 @@
 import React from 'react';
 import banner3 from '../Assets/Group 932.png'
-import style from '../../Styles/Onboard-first.module.css'
+import style from '../../Styles/Onboard.module.css'
 import icon1 from '../Assets/Group 8.png'
 import { useNavigate } from "react-router-dom";
 import icon2 from '../Assets/Group 7233.png'
@@ -9,10 +9,10 @@ const Onboard3 = () => {
     const navigate = useNavigate()
     return (
         <div className={`h-screen ${style.Page} animate__animated animate__backInRight`}>
-            <div className="h-1/2 py-3">
-                <img src={banner3} alt="" className="w-full h-full" />
+            <div className="h-[240px] py-3">
+                <img src={banner3} alt="" className="w-[90%] mx-auto h-full" />
             </div>
-            <div className={`h-1/2 py-4 px-6 ${style.BottomSection2} flex flex-col justify-between`}>
+            <div className={`h-[calc(100vh-240px)] py-4 px-6 ${style.BottomSection2} flex flex-col justify-between`}>
                 <div>
                     <p className={`${style.Heading} mb-4`}>Are You <span className={style.Span}>Ready?</span> Join with us</p>
                     <p></p>
