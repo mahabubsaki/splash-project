@@ -42,37 +42,43 @@ const SignIn = () => {
     const handleLogin = async (e) => {
         e.preventDefault()
     }
+    // .Label {
+    //     font-size: 14px;
+    //     color: #6e6e82;
+    //   }
     return (
-        <div className="px-7 animate__animated animate__backInUp">
-            <div className="flex my-2 items-center">
-                <IoIosArrowBack className={style.BackLogo} onClick={handleBack}></IoIosArrowBack><p className={`w-full text-center ${style.SignInText}`}>Sign In</p>
+        <div className="animate__animated animate__backInUp">
+            <div className="flex py-[3vh] items-center w-[93.6vw] ml-auto">
+                <IoIosArrowBack className="text-[#665af0] text-[24px] cursor-pointer" onClick={handleBack}></IoIosArrowBack><p className="w-full text-center font-medium text-[24px] leading-[28px] text-[#232440]">Sign In</p>
             </div>
-            <div className="h-[240px] mb-3">
-                <img src={banner4} alt="" className="w-[90%] mx-auto h-full" />
+            <div className="px-[7.7vw] mb-[1.4vh]">
+                <img src={banner4} alt="" className="w-full" />
             </div>
-            <form onSubmit={handleLogin} className="h-[calc(100vh-256px)]">
-                <div className="mb-7 relative">
-                    <label htmlFor="phone" className={style.Label}>Phone</label><br />
-                    <input type="tel" onChange={handlePhoneNumber} placeholder='Phone Number' id="phone" className={style.Input}></input>
-                    {userNumber && <img src={success} alt="" className='absolute right-4 top-11' />}
-                </div>
-                <div className="relative mb-2">
-                    <label htmlFor="password" className={style.Label}>Password</label><br />
-                    <input type={showPass ? 'text' : 'password'} id="password" placeholder="At least 8 characters" className={style.Input}></input>
-                    {showPass ? <img src={show} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-4 top-11 cursor-pointer' /> : <img src={hide} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-4 top-11 cursor-pointer' />}
-                </div>
-                <div className="flex justify-between items-center mb-[20px]">
-                    <div className={`${style.Checkbox} mr-12 leading-5`}>
-                        <input type="checkbox" id="checkbox" onChange={(e) => console.log(e.target.checked)} />
-                        <label htmlFor="checkbox"><span>Save Password</span></label>
+            <div className="pb-[10.59vh] pl-[4.5vw] pr-[8.2vw]">
+                <form onSubmit={handleLogin}>
+                    <div className="relative mb-[3.4vh]">
+                        <label htmlFor="phone" className="text-[14px] leading-[20px] text-[#6e6e82] mb-[1.5vh]">Phone</label><br />
+                        <input type="tel" name='phone' onChange={handlePhoneNumber} placeholder='Phone Number' id="phone" className={style.Input}></input>
+                        {userNumber && <img src={success} alt="" className='absolute right-4 top-11' />}
                     </div>
-                    <div className="w-1/2 ml-5">
-                        <p className="text-right text-[13px] leading-5 text-[#665AF0] cursor-pointer" onClick={() => navigate('/forget-password')}>Forgot Password?</p>
+                    <div className="relative mb-[1vh]">
+                        <label htmlFor="password" className="text-[14px] leading-[20px] text-[#6e6e82] mb-[1vh] ">Password</label><br />
+                        <input name='password' type={showPass ? 'text' : 'password'} id="password" placeholder="At least 8 characters" className={style.Input}></input>
+                        {showPass ? <img src={show} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-4 top-11 cursor-pointer' /> : <img src={hide} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-4 top-11 cursor-pointer' />}
                     </div>
-                </div>
-                <button className={`${style.SignIn} w-full py-[10px]`} type='submit'>Sign In</button>
-            </form>
-            <p className="text-center">Don't have an Account? <span className='text-[17px] text-[#665AF0]'>Sign Up</span></p>
+                    <div className="flex justify-between items-center mb-[4.9vh]">
+                        <div className={`${style.Checkbox} mr-12 leading-5`}>
+                            <input type="checkbox" id="checkbox" onChange={(e) => console.log(e.target.checked)} />
+                            <label htmlFor="checkbox"><span>Save Password</span></label>
+                        </div>
+                        <div className="w-1/2 ml-5">
+                            <p className="text-right text-[13px] leading-5 text-[#665AF0] cursor-pointer" onClick={() => navigate('/forget-password')}>Forgot Password?</p>
+                        </div>
+                    </div>
+                    <button className={`${style.SignIn} w-full mb-[1.9vh]`} type='submit'>Sign In</button>
+                </form>
+                <p className="text-center">Don't have an Account? <span className='text-[16px] text-[#665AF0] cursor-pointer'>Sign Up</span></p>
+            </div>
         </div>
     );
 };

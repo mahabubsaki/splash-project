@@ -13,19 +13,17 @@ const Onboard2 = ({ setFirstOnBoard, setSecondOnBoard, setThirdOnBoard }) => {
         setFirstOnBoard(true)
     }
     return (
-        <div className={`h-screen ${style.Page} animate__animated animate__backInRight`}>
-            <div className="h-[240px] py-3">
-                <img src={banner2} alt="" className="w-[90%] mx-auto h-full" />
+        <div className={`animate__animated animate__backInRight`}>
+            <div className="mt-[12.1vh] mb-[10.9vh]">
+                <img src={banner2} alt="" className="w-full px-[4vw]" />
             </div>
-            <div className={`h-[calc(100vh-240px)] py-4 px-6 ${style.BottomSection} flex flex-col justify-between`}>
-                <div>
-                    <p className={`${style.Heading} mb-4`}><span className={style.Span}>Various </span>Payment Method</p>
-                    <p className={style.Description}>Offer your customers with various payment options including Debit , Credit card, MFS, Wallet, Net Banking</p>
-                </div>
-                <div className="flex justify-between items-center">
-                    <button onClick={handlePreviosPage} className={style.PreviousBtn}><BsArrowLeft className={style.Icon}></BsArrowLeft></button>
-                    <button className={style.NextBtn} onClick={handleNextPage}>Next <BsArrowRight className="inline"></BsArrowRight></button>
-                </div>
+            <div className="px-[7.7vw]">
+                <p className="text-[32px] font-medium leading-[42px] mb-[3.3vh]"><span className={style.Span}>Various</span> Payment Method</p>
+                <p className="font-normal opacity-50 text-[15px] leading-[19.53px]">Offer your customers with various payment options including Debit , Credit card, MFS, Wallet, Net Banking</p>
+            </div>
+            <div className={`flex justify-between items-center px-[7.2vw] pt-[11.2vh] pb-[6vh] ${style.BottomSection}`}>
+                <button onClick={handlePreviosPage} className={style.PreviousBtn}><BsArrowLeft className="text-[20px]"></BsArrowLeft></button>
+                <button className={style.NextBtn} onClick={handleNextPage}>Next <BsArrowRight className="inline"></BsArrowRight></button>
             </div>
         </div>
     );

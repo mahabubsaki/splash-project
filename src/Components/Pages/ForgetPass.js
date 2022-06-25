@@ -11,10 +11,7 @@ const ForgetPass = () => {
     const [verification, setVerification] = useState(false)
     const [status, setStatus] = useState("process")
     const handleOnFinish = (code) => {
-        alert(code)
         setStatus("wait");
-
-        // simulating a search on your api
         if (code === "1111") {
             setTimeout(() => {
                 setStatus("error");
@@ -22,6 +19,7 @@ const ForgetPass = () => {
         } else {
             setTimeout(() => {
                 setStatus("success");
+                navigate('/reset-password')
             }, 3000);
         }
     }
@@ -29,18 +27,25 @@ const ForgetPass = () => {
         const email = e.target.email.value
         setVerification(true)
     }
+
     return (
-        <div className="h-screen px-7 animate__animated animate__backInUp">
-            <div className="flex my-2 items-center">
-                <IoIosArrowBack className={style.BackLogo} onClick={() => navigate('/sign-in')}></IoIosArrowBack><p className={`w-full text-center ${style.ForgetText}`}>Reset Password</p>
-            </div>
-            <div className="h-[240px] mb-2">
-                <img src={verification ? banner6 : banner5} alt="" className="w-[90%] h-full" />
+        <div className="animate__animated animate__backInUp">
+            <div className="flex py-[3vh] items-center w-[93.6vw] ml-auto">
+                <IoIosArrowBack className="text-[#665af0] text-[24px] cursor-pointer" onClick={() => navigate('/sign-in')}></IoIosArrowBack><p className="w-full text-center font-medium text-[24px] leading-[28px] text-[#232440]">Reset Password</p>
             </div>
             {verification ? <>
-                <div className="mt-2 text-center mb-5">
-                    <p className="text-[24px] font-normal mb-2">Verify Your Code</p>
-                    <p className="opacity-50">Enter The Code Sent To Your Email</p>
+                <div className="px-[3.2vw] mb-[9.2vh] mt-[3.4vh]">
+                    <img src={banner6} alt="" className="w-full" />
+                </div>
+            </> : <>
+                <div className="px-[3.2vw] mb-[6vh]">
+                    <img src={banner5} alt="" className="w-full" />
+                </div>
+            </>}
+            {verification ? <>
+                <div className="text-center">
+                    <p className="text-[24px] leading-[42px] font-normal mb-[1.2vh]">Verify Your Code</p>
+                    <p className="opacity-50 text-[14px] mb-[3.3vh]">Enter The Code Sent To Your Email</p>
                     <VerificationPin
                         type="number"
                         autoFocus={true}
@@ -50,13 +55,13 @@ const ForgetPass = () => {
                     />
                 </div>
             </> : <>
-                <div className="mt-2 text-center mb-5">
-                    <p className="text-[24px] font-normal mb-2">Forget Password?</p>
-                    <p className="opacity-50">Enter The Email Associated with your account.</p>
+                <div className="text-center">
+                    <p className="text-[24px] leading-[42px] font-normal mb-[1.2vh]">Forget Password?</p>
+                    <p className="opacity-50 text-[14px] mb-[3.3vh]">Enter The Email Associated with your account.</p>
                 </div>
-                <form onSubmit={handleResetEmail}>
+                <form onSubmit={handleResetEmail} className="px-[6.4vw]">
                     <input name="email" type="email" placeholder='Enter Your Email' id="phone" className={style.Input} required></input>
-                    <button className={`${style.GetCode} w-full py-[10px]`} type='submit'>Get Code</button>
+                    <button className={`${style.GetCode} w-full mt-[3.7vh]`} type='submit'>Get Code</button>
                 </form>
             </>}
         </div>

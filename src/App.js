@@ -7,6 +7,7 @@ import SignIn from './Components/Pages/SignIn';
 import React, { useState } from 'react';
 import Register from './Components/Pages/Register';
 import ForgetPass from './Components/Pages/ForgetPass';
+import ResetPass from './Components/Pages/ResetPass';
 export const AppContext = React.createContext();
 
 
@@ -23,7 +24,7 @@ function App() {
             <Route path="/sign-in" element={<SignIn />} />
             <Route path="/register" element={<Register />} />
             <Route path="/forget-password" element={<ForgetPass />} />
-
+            <Route path="/reset-password" element={<ResetPass />} />
           </Routes>
         </div>
         <Invalid />
