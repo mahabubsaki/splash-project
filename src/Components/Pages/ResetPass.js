@@ -38,12 +38,12 @@ const ResetPass = () => {
                     <div className="relative mb-[3.3vh]">
                         <label htmlFor="password" className="text-[14px] leading-[20px] text-[#6e6e82] mb-[2vh]">Password</label><br />
                         <input name="password" type={showPass ? 'text' : 'password'} id="password" placeholder="At least 8 characters" className={style.Input}></input>
-                        {showPass ? <img src={show} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-4 top-11 cursor-pointer' /> : <img src={hide} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-4 top-11 cursor-pointer' />}
+                        {showPass ? <img src={show} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-4 top-[37px] cursor-pointer' /> : <img src={hide} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-4 top-[37px] cursor-pointer' />}
                     </div>
                     <div className="relative mb-[4.5vh]">
                         <label htmlFor="confirm-password" className="text-[14px] leading-[20px] text-[#6e6e82] mb-[2vh]">Confirm Password</label><br />
                         <input name="confirm" type={showPass1 ? 'text' : 'password'} id="confirm-password" placeholder="At least 8 characters" className={style.Input}></input>
-                        {showPass1 ? <img src={show} onClick={() => setShowPass1(!showPass1)} alt="" className='absolute right-4 top-11 cursor-pointer' /> : <img src={hide} onClick={() => setShowPass1(!showPass1)} alt="" className='absolute right-4 top-11 cursor-pointer' />}
+                        {showPass1 ? <img src={show} onClick={() => setShowPass1(!showPass1)} alt="" className='absolute right-4 top-[37px] cursor-pointer' /> : <img src={hide} onClick={() => setShowPass1(!showPass1)} alt="" className='absolute right-4 top-[37px] cursor-pointer' />}
                     </div>
                     <button className={`${style.GetCode} w-full py-[10px]`} type='submit'>Reset Password</button>
                 </form>
