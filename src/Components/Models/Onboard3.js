@@ -19,7 +19,7 @@ const Onboard3 = () => {
             </div>
             <div className={`flex justify-between items-center px-[7.2vw] pt-[11.2vh] pb-[6vh] ${style.BottomSection2}`}>
                 <button className={`${style.SignIn} flex items-center`} onClick={() => navigate('/sign-in')}><img src={icon2} alt="icon" className='mr-3' /> Sign In</button>
-                <button className={`${style.SignIn} flex items-center`}><img src={icon1} alt="icon" className='mr-3' /> Registration</button>
+                <button className={`${style.SignIn} flex items-center`} onClick={() => navigate('/register')}><img src={icon1} alt="icon" className='mr-3' /> Registration</button>
             </div>
         </div>
     );

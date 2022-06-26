@@ -25,6 +25,7 @@ const ForgetPass = () => {
     }
     const handleResetEmail = (e) => {
         const email = e.target.email.value
+        console.log(email);
         setVerification(true)
     }
 
