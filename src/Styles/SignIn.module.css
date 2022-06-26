@@ -95,3 +95,73 @@
 .Selection {
   color: #7f7f92;
 }
+.Checkbox2 {
+  width: 10%;
+  position: relative;
+  display: block;
+}
+
+.Checkbox2 input[type='checkbox'] {
+  width: auto;
+  opacity: 0.00000001;
+  position: absolute;
+  left: 0;
+  margin-left: -20px;
+}
+.Checkbox2 label {
+  position: relative;
+}
+.Checkbox2 label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 22px;
+  height: 22px;
+  transition: transform 0.28s ease;
+  border-radius: 3px;
+  border: 2px solid #665af0;
+}
+.Checkbox2 label:after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 5px;
+  border-bottom: 2px solid #665af0;
+  border-left: 2px solid #665af0;
+  -webkit-transform: rotate(-45deg) scale(0);
+  transform: rotate(-45deg) scale(0);
+  transition: transform ease 0.25s;
+  will-change: transform;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+}
+.Checkbox2 input[type='checkbox']:checked ~ label::before {
+  color: #665af0;
+}
+
+.Checkbox2 input[type='checkbox']:checked ~ label::after {
+  -webkit-transform: rotate(-45deg) scale(1);
+  transform: rotate(-45deg) scale(1);
+}
+
+.Checkbox2 label {
+  height: 34px;
+  display: block;
+  padding-left: 40px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+.Checkbox2 label span {
+  font-size: 13px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.Checkbox2 input[type='checkbox']:focus + label::before {
+  outline: 0;
+}

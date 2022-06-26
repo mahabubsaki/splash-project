@@ -77,7 +77,7 @@ const SignIn = () => {
                     </div>
                     <button className={`${style.SignIn} w-full mb-[1.9vh]`} type='submit'>Sign In</button>
                 </form>
-                <p className="text-center">Don't have an Account? <span className='text-[16px] text-[#665AF0] cursor-pointer'>Sign Up</span></p>
+                <p className="text-center">Don't have an Account? <span className='text-[16px] text-[#665AF0] cursor-pointer' onClick={() => navigate('/register')}>Sign Up</span></p>
             </div>
         </div>
     );
