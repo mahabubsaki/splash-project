@@ -34,7 +34,7 @@ const ResetPass = () => {
                     <p className="text-[24px] leading-[42px] mb-[1.2vh] font-medium">Create a new password</p>
                     <p className="opacity-50 text-[14px] mb-[3.3vh]">Your new pasword must be different from old password</p>
                 </div>
-                <form onSubmit={handleLogin} className="px-[6.4vw]">
+                <form autoComplete='off' onSubmit={handleLogin} className="px-[6.4vw]">
                     <div className="relative mb-[3.3vh]">
                         <label htmlFor="password" className="text-[14px] leading-[20px] text-[#6e6e82] mb-[2vh]">Password</label><br />
                         <input name="password" type={showPass ? 'text' : 'password'} id="password" placeholder="At least 8 characters" className={style.Input}></input>

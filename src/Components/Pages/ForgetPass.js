@@ -60,7 +60,7 @@ const ForgetPass = () => {
                     <p className="text-[24px] leading-[42px] font-normal mb-[1.2vh]">Forget Password?</p>
                     <p className="opacity-50 text-[14px] mb-[3.3vh]">Enter The Email Associated with your account.</p>
                 </div>
-                <form onSubmit={handleResetEmail} className="px-[6.4vw]">
+                <form autoComplete='off' onSubmit={handleResetEmail} className="px-[6.4vw]">
                     <input name="email" type="email" placeholder='Enter Your Email' id="phone" className={style.Input} required></input>
                     <button className={`${style.GetCode} w-full mt-[3.7vh]`} type='submit'>Get Code</button>
                 </form>

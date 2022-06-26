@@ -55,7 +55,7 @@ const SignIn = () => {
                 <img src={banner4} alt="" className="w-full" />
             </div>
             <div className="pb-[10.59vh] pl-[4.5vw] pr-[8.2vw]">
-                <form onSubmit={handleLogin}>
+                <form autoComplete='off' onSubmit={handleLogin}>
                     <div className="relative mb-[3.4vh]">
                         <label htmlFor="phone" className="text-[14px] leading-[20px] text-[#6e6e82] mb-[1.5vh]">Phone</label><br />
                         <input type="tel" name='phone' onChange={handlePhoneNumber} placeholder='Phone Number' id="phone" className={style.Input}></input>
@@ -68,7 +68,7 @@ const SignIn = () => {
                     </div>
                     <div className="flex justify-between items-center mb-[4.9vh]">
                         <div className={`${style.Checkbox} mr-12 leading-5`}>
-                            <input type="checkbox" id="checkbox" onChange={(e) => console.log(e.target.checked)} />
+                            <input type="checkbox" id="checkbox" name="save" />
                             <label htmlFor="checkbox"><span>Save Password</span></label>
                         </div>
                         <div className="w-1/2 ml-5">

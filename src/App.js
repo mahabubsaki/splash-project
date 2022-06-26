@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import Register from './Components/Pages/Register';
 import ForgetPass from './Components/Pages/ForgetPass';
 import ResetPass from './Components/Pages/ResetPass';
+import Home from './Components/Pages/Home';
 export const AppContext = React.createContext();
 
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/forget-password" element={<ForgetPass />} />
             <Route path="/reset-password" element={<ResetPass />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
         </div>
         <Invalid />
