@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
-import banner5 from '../Assets/Graphic.png'
-import banner6 from '../Assets/asd.png'
+import banner5 from '../Assets/Graphicf.svg'
+import banner6 from '../Assets/Graphicasd.svg'
 import style from '../../Styles/Forget.module.css'
 import { VerificationPin } from 'react-verification-pin';
+import { AppContext } from '../../App';
 
 const ForgetPass = () => {
     const navigate = useNavigate()
     const [verification, setVerification] = useState(false)
+    const { setSignPageLeft, forgetPageLeft, setForgetPageLeft } = useContext(AppContext)
     const [status, setStatus] = useState("process")
     const handleOnFinish = (code) => {
         setStatus("wait");
@@ -28,11 +30,15 @@ const ForgetPass = () => {
         console.log(email);
         setVerification(true)
     }
-
+    const handleNavigate = () => {
+        setSignPageLeft(true)
+        setForgetPageLeft(false)
+        navigate('/sign-in')
+    }
     return (
-        <div className="animate__animated animate__backInUp">
+        <div className={`animate__animated animate__faster ${forgetPageLeft ? 'animate__fadeInLeftBig' : 'animate__fadeInRightBig'}`}>
             <div className="flex py-[3vh] items-center w-[93.6vw] ml-auto">
-                <IoIosArrowBack className="text-[#665af0] text-[24px] cursor-pointer" onClick={() => navigate('/sign-in')}></IoIosArrowBack><p className="w-full text-center font-medium text-[24px] leading-[28px] text-[#232440]">Reset Password</p>
+                <IoIosArrowBack className="text-[#665af0] text-[24px] cursor-pointer" onClick={handleNavigate}></IoIosArrowBack><p className="w-full text-center font-medium text-[24px] leading-[28px] text-[#232440]">Reset Password</p>
             </div>
             {verification ? <>
                 <div className="px-[3.2vw] mb-[9.2vh] mt-[3.4vh]">

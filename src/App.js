@@ -16,9 +16,12 @@ function App() {
   const [thirdOnBoard, setThirdOnBoard] = useState(false)
   const [firstOnBoard, setFirstOnBoard] = useState(true)
   const [secondOnBoard, setSecondOnBoard] = useState(false)
+  const [signInLeft, setSignInLeft] = useState(false)
+  const [signPageLeft, setSignPageLeft] = useState(false)
+  const [forgetPageLeft, setForgetPageLeft] = useState(false)
   return (
     <>
-      <AppContext.Provider value={{ firstOnBoard, setFirstOnBoard, secondOnBoard, setSecondOnBoard, thirdOnBoard, setThirdOnBoard }}>
+      <AppContext.Provider value={{ firstOnBoard, setFirstOnBoard, secondOnBoard, setSecondOnBoard, thirdOnBoard, setThirdOnBoard, signInLeft, setSignInLeft, signPageLeft, setSignPageLeft, forgetPageLeft, setForgetPageLeft }}>
         <div className="root">
           <Routes>
             <Route path="/" element={<OnBoardIndex />} />

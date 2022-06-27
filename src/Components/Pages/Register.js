@@ -47,16 +47,21 @@ const Register = () => {
         e.preventDefault()
         setRegisterDone(true)
     }
-    const { setThirdOnBoard, setFirstOnBoard } = useContext(AppContext)
+    const { setThirdOnBoard, setFirstOnBoard, setSignInLeft, setSignPageLeft } = useContext(AppContext)
     const handleBack = () => {
+        setSignInLeft(true)
         navigate('/')
         setFirstOnBoard(false)
         setThirdOnBoard(true)
     }
+    const handleNavigate = () => {
+        setSignPageLeft(false)
+        navigate('/sign-in')
+    }
     return (
         <>
             {registerDone && <RegisterSuccssModal />}
-            <div className="animate__animated animate__backInUp">
+            <div className="animate__animated animate__fadeInRightBig animate__faster">
                 <div className="flex py-[3vh] items-center w-[93.6vw] ml-auto">
                     <IoIosArrowBack className="text-[#665af0] text-[24px] cursor-pointer" onClick={handleBack}></IoIosArrowBack><p className="w-full text-center font-medium text-[24px] leading-[28px] text-[#232440]">Registration</p>
                 </div>
@@ -132,7 +137,7 @@ const Register = () => {
                         </div>
                         <button className={`${style.SignIn} w-full mb-[2.5vh]`} type='submit'>Register</button>
                     </form>
-                    <p className="text-[16px] leading-6 text-center">Already have account ? <span className='text-[#665AF0] cursor-pointer' onClick={() => navigate('/sign-in')}>Login</span></p>
+                    <p className="text-[16px] leading-6 text-center">Already have account ? <span className='text-[#665AF0] cursor-pointer' onClick={handleNavigate}>Login</span></p>
                 </div>
             </div>
         </>

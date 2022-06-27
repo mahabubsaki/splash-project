@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import React from 'react';
-import addmoney from '../Assets/Iconinput.png'
-import withdrawmoney from '../Assets/Iconoutput.png'
+import addmoney from '../Assets/Iconinput.svg'
+import withdrawmoney from '../Assets/Iconoutput.svg'
 import SingleTransaction from './SingleTransaction';
 
 const Transactions = () => {

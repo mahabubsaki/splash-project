@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import banner3 from '../Assets/Group 932.png'
 import style from '../../Styles/Onboard.module.css'
 import icon1 from '../Assets/Group 8.png'
 import { useNavigate } from "react-router-dom";
 import icon2 from '../Assets/Group 7233.png'
+import { AppContext } from '../../App';
 
 const Onboard3 = () => {
     const navigate = useNavigate()
+    const { signInLeft, setSignPageLeft } = useContext(AppContext)
+    useEffect(() => {
+        setSignPageLeft(false)
+    }, [])
     return (
-        <div className={`animate__animated animate__backInRight`}>
+        <div className={`animate__animated ${signInLeft ? 'animate__fadeInLeftBig' : 'animate__fadeInRightBig'} animate__faster`}>
             <div className="mt-[16.3vh] mb-[6.5vh]">
                 <img src={banner3} alt="" className="w-full" />
             </div>

@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
-import banner7 from '../Assets/g10.png'
+import banner7 from '../Assets/g10.svg'
 import style from '../../Styles/Forget.module.css'
 import { useNavigate } from 'react-router-dom';
 import hide from '../Assets/Hide - Bold 20px.svg'
 import show from '../Assets/Show - Bold 20px.svg'
 import ResetSuccssModal from '../Models/ResetSuccssModal';
+import { AppContext } from '../../App';
 
 const ResetPass = () => {
     const [showPass, setShowPass] = useState(false)
     const [showPass1, setShowPass1] = useState(false)
+    const { setForgetPageLeft } = useContext(AppContext)
     const [done, setDone] = useState(false)
     const navigate = useNavigate()
     const handleLogin = (e) => {
@@ -20,12 +22,16 @@ const ResetPass = () => {
             setDone(true)
         }
     }
+    const handleNavigate = () => {
+        setForgetPageLeft(true)
+        navigate('/forget-password')
+    }
     return (
         <>
             {done && <ResetSuccssModal />}
-            <div className="animate__animated animate__backInUp z-10">
+            <div className="animate__animated animate__fadeInRightBig animate__faster z-10">
                 <div className="flex py-[3vh] items-center w-[93.6vw] ml-auto">
-                    <IoIosArrowBack className="text-[#665af0] text-[24px] cursor-pointer" onClick={() => navigate('/forget-password')}></IoIosArrowBack><p className="w-full text-center font-medium text-[24px] leading-[28px] text-[#232440]">Reset Password</p>
+                    <IoIosArrowBack className="text-[#665af0] text-[24px] cursor-pointer" onClick={handleNavigate}></IoIosArrowBack><p className="w-full text-center font-medium text-[24px] leading-[28px] text-[#232440]">Reset Password</p>
                 </div>
                 <div className="mt-[1vh] px-[18.5vw] mb-[3.9vh]">
                     <img src={banner7} alt="" className="w-full bg-transparent" />

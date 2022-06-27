@@ -2,7 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import "swiper/css";
-import banner from "../Assets/banner image.png"
+import banner from "../Assets/banner image.svg"
 import "swiper/css/pagination";
 
 const OfferSwipper = () => {

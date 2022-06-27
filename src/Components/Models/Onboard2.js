@@ -1,5 +1,5 @@
 import React from 'react';
-import banner2 from '../Assets/Graphicsecond.png'
+import banner2 from '../Assets/Graphicseconds.svg'
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs'
 import style from '../../Styles/Onboard.module.css'
 
@@ -13,7 +13,7 @@ const Onboard2 = ({ setFirstOnBoard, setSecondOnBoard, setThirdOnBoard }) => {
         setFirstOnBoard(true)
     }
     return (
-        <div className={`animate__animated animate__backInRight`}>
+        <div className={`animate__animated animate__fadeInRightBig animate__faster`}>
             <div className="mt-[12.1vh] mb-[10.9vh]">
                 <img src={banner2} alt="" className="w-full px-[4vw]" />
             </div>

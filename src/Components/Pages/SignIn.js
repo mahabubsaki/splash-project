@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { IoIosArrowBack } from 'react-icons/io'
 import style from '../../Styles/SignIn.module.css'
-import banner4 from '../Assets/Graphic1.png'
+import banner4 from '../Assets/Graphic1.svg'
 import success from '../Assets/Icon Checksuccess.png'
 import show from '../Assets/Show - Bold 20px.svg'
 import hide from '../Assets/Hide - Bold 20px.svg'
@@ -11,8 +11,10 @@ const SignIn = () => {
     const [userNumber, setUserNumber] = useState(false)
     const [showPass, setShowPass] = useState(false)
     const navigate = useNavigate()
-    const { setThirdOnBoard, setFirstOnBoard } = useContext(AppContext)
+    const { setThirdOnBoard, setFirstOnBoard, setSignInLeft, setSignPageLeft, signPageLeft } = useContext(AppContext)
     const handleBack = () => {
+        setSignInLeft(true)
+        setSignPageLeft(false)
         navigate('/')
         setFirstOnBoard(false)
         setThirdOnBoard(true)
@@ -42,12 +44,8 @@ const SignIn = () => {
     const handleLogin = async (e) => {
         e.preventDefault()
     }
-    // .Label {
-    //     font-size: 14px;
-    //     color: #6e6e82;
-    //   }
     return (
-        <div className="animate__animated animate__backInUp">
+        <div className={`animate__animated ${signPageLeft ? 'animate__fadeInLeftBig' : 'animate__fadeInRightBig'} animate__faster`}>
             <div className="flex py-[3vh] items-center w-[93.6vw] ml-auto">
                 <IoIosArrowBack className="text-[#665af0] text-[24px] cursor-pointer" onClick={handleBack}></IoIosArrowBack><p className="w-full text-center font-medium text-[24px] leading-[28px] text-[#232440]">Sign In</p>
             </div>
