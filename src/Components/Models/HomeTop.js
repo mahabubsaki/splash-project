@@ -5,7 +5,7 @@ import profile from '../Assets/pic.png'
 const HomeTop = () => {
     const [notifications, setNotifications] = useState(true)
     return (
-        <div className={`${style.TopPart} h-[34vh] rounded-[20px] px-[4.2vw] pt-[8vh] relative z-10 mb-[7.6vh]`}>
+        <div className={`${style.TopPart} h-[34vh] px-[4.2vw] pt-[8vh] relative z-10 mb-[7.6vh]`}>
             <div className="flex items-center justify-between mb-[3.5vh]">
                 <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="23.6197" y="14" width="23.6198" height="2" rx="1" transform="rotate(180 23.6197 14)" fill="white" />
