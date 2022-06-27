@@ -11,7 +11,7 @@ const Onboard3 = () => {
     const { signInLeft, setSignPageLeft } = useContext(AppContext)
     useEffect(() => {
         setSignPageLeft(false)
-    }, [])
+    }, [setSignPageLeft])
     return (
         <div className={`animate__animated ${signInLeft ? 'animate__fadeInLeftBig' : 'animate__fadeInRightBig'} animate__faster`}>
             <div className="mt-[16.3vh] mb-[6.5vh]">

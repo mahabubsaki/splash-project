@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import HomeTop from '../Models/HomeTop';
 import OfferSwipper from '../Models/OfferSwipper';
 import Overview from '../Models/Overview';

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoIosArrowBack } from 'react-icons/io'
 import style from '../../Styles/SignIn.module.css'
 import banner4 from '../Assets/Graphic1.svg'

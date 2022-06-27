@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../../Styles/Home.module.css'
-import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer, YAxis } from 'recharts';
+import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 const Overview = () => {
     const data = [
         {
