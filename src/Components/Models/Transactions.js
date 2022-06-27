@@ -18,7 +18,7 @@ const Transactions = () => {
                 <p className="text-[16px] font-medium">Transactions</p>
                 <p className="text-[12px] text-[#5C3DDB]">See All</p>
             </div>
-            <div className="pl-[5.3vw] pr-[4.8vw] mb-[0.7vh]">
+            <div className="mb-[0.7vh]">
                 {transactions.map((transaction, index) => <SingleTransaction
                     key={index}
                     transaction={transaction}
