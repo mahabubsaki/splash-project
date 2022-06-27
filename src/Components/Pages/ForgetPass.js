@@ -11,19 +11,9 @@ const ForgetPass = () => {
     const navigate = useNavigate()
     const [verification, setVerification] = useState(false)
     const { setSignPageLeft, forgetPageLeft, setForgetPageLeft } = useContext(AppContext)
-    const [status, setStatus] = useState("process")
-    const handleOnFinish = (code) => {
-        setStatus("wait");
-        if (code === "1111") {
-            setTimeout(() => {
-                setStatus("error");
-            }, 3000);
-        } else {
-            setTimeout(() => {
-                setStatus("success");
-                navigate('/reset-password')
-            }, 3000);
-        }
+    const [code, setCode] = useState("")
+    const handleOnFinish = () => {
+        navigate('/reset-password')
     }
     const handleResetEmail = (e) => {
         const email = e.target.email.value
@@ -53,13 +43,19 @@ const ForgetPass = () => {
                 <div className="text-center">
                     <p className="text-[24px] leading-[42px] font-normal mb-[1.2vh]">Verify Your Code</p>
                     <p className="opacity-50 text-[14px] mb-[3.3vh]">Enter The Code Sent To Your Email</p>
-                    <VerificationPin
-                        type="number"
-                        autoFocus={true}
-                        inputsNumber={4}
-                        status={status}
-                        onFinish={handleOnFinish}
-                    />
+                    <div className='mb-[5.6vh]'>
+                        <VerificationPin
+                            type="number"
+                            autoFocus={true}
+                            inputsNumber={4}
+                            onChange={() => setCode('')}
+                            status="process"
+                            onFinish={(code) => setCode(code)}
+                        />
+                    </div>
+                    <div className="mx-[6.4vw]">
+                        <button className={`${style.GetCode} w-full py-[10px]`} onClick={handleOnFinish} type='submit' disabled={!code}>Verify Code</button>
+                    </div>
                 </div>
             </> : <>
                 <div className="text-center">

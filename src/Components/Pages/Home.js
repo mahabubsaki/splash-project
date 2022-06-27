@@ -10,7 +10,7 @@ const Home = () => {
         window.scrollTo(0, 0);
     }, [])
     return (
-        <div className="animate__animated animate__backInUp min-h-screen">
+        <div className="animate__animated animate__fadeInRightBig animate__faster min-h-screen">
             <HomeTop />
             <Services />
             <OfferSwipper />
