@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import style from '../../Styles/Home.module.css'
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, } from 'recharts';
 const Overview = () => {
     const days = [
         {
@@ -125,15 +125,19 @@ const Overview = () => {
         },
     ]
     const [data, setData] = useState(days)
+    const [small, setSmall] = useState(true)
     const handleChart = (e) => {
         if (e.target.value === 'day') {
             setData(days)
+            setSmall(true)
         }
         if (e.target.value === 'week') {
             setData(weeks)
+            setSmall(false)
         }
         if (e.target.value === 'month') {
             setData(months)
+            setSmall(false)
         }
     }
     return (
@@ -151,15 +155,16 @@ const Overview = () => {
             <div className="px-[3.4vw] mb-[2vh] w-full h-[50vh]">
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart
-
                         data={data}
                     >
                         {/* <CartesianGrid horizontal={false} /> */}
                         <XAxis axisLine={false}
+                            tickMargin={0}
+                            minTickGap={-15}
                             tickLine={false}
-                            dataKey="name" style={{ fontSize: "7px" }} tick={{ fill: '#504DE5' }} />
+                            dataKey="name" style={{ fontSize: small ? '6px' : '8px' }} tick={{ fill: '#504DE5' }} />
                         <Tooltip />
-                        <Line strokeDashArray="4 1" type="monotone" name='STA' dataKey="STA" strokeWidth={3} stroke="#504DE5" dot={{ r: 0 }} activeDot={{ r: 6, }} />
+                        <Line type="monotone" name='STA' dataKey="STA" strokeWidth={2.5} stroke="#504DE5" dot={{ r: 0 }} activeDot={{ r: 5, }} />
                         <Line type="monotone" name='A' dataKey="A" strokeWidth={0} stroke="#504DE5" dot={{ r: 0 }} activeDot={{ r: 0 }} />
                         <Line type="monotone" name='ST' dataKey="ST" strokeWidth={0} stroke="#504DE5" dot={{ r: 0 }} activeDot={{ r: 0 }} />
                     </LineChart>
