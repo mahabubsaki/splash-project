@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import HomeTop from '../Models/HomeTop';
+import Navigation from '../Models/Navigation';
 import OfferSwipper from '../Models/OfferSwipper';
 import Overview from '../Models/Overview';
 import Services from '../Models/Services';
@@ -10,13 +11,16 @@ const Home = () => {
         window.scrollTo(0, 0);
     }, [])
     return (
-        <div className="animate__animated animate__fadeInRightBig animate__faster min-h-screen">
-            <HomeTop />
-            <Services />
-            <OfferSwipper />
-            <Transactions />
-            <Overview />
-        </div>
+        <>
+            <Navigation />
+            <div className="animate__animated animate__fadeInRightBig animate__faster bg-[#e5e5e5]">
+                <HomeTop />
+                <Services />
+                <OfferSwipper />
+                <Transactions />
+                <Overview />
+            </div>
+        </>
     );
 };
 

@@ -4,50 +4,44 @@ import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, } from 'recharts'
 const Overview = () => {
     const days = [
         {
-            name: 'Date',
-            STA: 0,
-            A: 0,
-            ST: 0,
-        },
-        {
-            name: 'Apr 1',
+            name: '1 Apr',
             STA: 15000,
             A: 150,
             ST: 124,
         },
         {
-            name: 'Apr 2',
+            name: '2 Apr',
             STA: 35343,
             A: 190,
             ST: 177,
 
         },
         {
-            name: 'Apr 3',
+            name: '3 Apr',
             STA: 28345,
             A: 230,
             ST: 223,
         },
         {
-            name: 'Apr 4',
+            name: '4 Apr',
             STA: 45324,
             A: 270,
             ST: 250,
         },
         {
-            name: 'Apr 5',
+            name: '5 Apr',
             STA: 40235,
             A: 295,
             ST: 275,
         },
         {
-            name: 'Apr 6',
+            name: '6 Apr',
             STA: 42365,
             A: 310,
             ST: 290,
         },
         {
-            name: 'Apr 7',
+            name: '7 Apr',
             STA: 32354,
             A: 400,
             ST: 390,
@@ -55,44 +49,32 @@ const Overview = () => {
     ];
     const weeks = [
         {
-            name: 'Week',
-            STA: 0,
-            A: 0,
-            ST: 0,
-        },
-        {
-            name: '1-7 Apr',
+            name: '1-7 April',
             STA: 15000,
             A: 150,
             ST: 124,
         },
         {
-            name: '8-14 Apr',
+            name: '8-14 April',
             STA: 35343,
             A: 190,
             ST: 177,
 
         },
         {
-            name: '15-21 Apr',
+            name: '15-21 April',
             STA: 28345,
             A: 230,
             ST: 223,
         },
         {
-            name: '22-28 Apr',
+            name: '22-28 April',
             STA: 45324,
             A: 270,
             ST: 250,
         },
     ]
     const months = [
-        {
-            name: 'Month',
-            STA: 0,
-            A: 0,
-            ST: 0,
-        },
         {
             name: 'Jan 2022',
             STA: 28345,
@@ -125,19 +107,15 @@ const Overview = () => {
         },
     ]
     const [data, setData] = useState(days)
-    const [small, setSmall] = useState(true)
     const handleChart = (e) => {
         if (e.target.value === 'day') {
             setData(days)
-            setSmall(true)
         }
         if (e.target.value === 'week') {
             setData(weeks)
-            setSmall(false)
         }
         if (e.target.value === 'month') {
             setData(months)
-            setSmall(false)
         }
     }
     return (
@@ -158,11 +136,12 @@ const Overview = () => {
                         data={data}
                     >
                         {/* <CartesianGrid horizontal={false} /> */}
-                        <XAxis axisLine={false}
-                            tickMargin={0}
+                        <XAxis
+                            interval={'preserveStartEnd'}
                             minTickGap={-15}
                             tickLine={false}
-                            dataKey="name" style={{ fontSize: small ? '6px' : '8px' }} tick={{ fill: '#504DE5' }} />
+                            axisLine={false}
+                            dataKey="name" style={{ fontSize: "7px" }} tick={{ fill: '#504DE5' }} />
                         <Tooltip />
                         <Line type="monotone" name='STA' dataKey="STA" strokeWidth={2.5} stroke="#504DE5" dot={{ r: 0 }} activeDot={{ r: 5, }} />
                         <Line type="monotone" name='A' dataKey="A" strokeWidth={0} stroke="#504DE5" dot={{ r: 0 }} activeDot={{ r: 0 }} />
@@ -170,7 +149,7 @@ const Overview = () => {
                     </LineChart>
                 </ResponsiveContainer>
             </div>
-            <div className="pl-[5.2vw] pr-[3.4vw] mb-[2vh] text-[13.5px]">
+            <div className="pl-[5.2vw] pr-[3.4vw] pb-[11vh] text-[13.5px]">
                 <p className={`pl-[1vw] mb-[2vh] ${style.Indicator}`}>STA - Total Successfull Transaction Amount</p>
                 <p className={`pl-[1vw] mb-[2vh] ${style.Indicator}`}>ST - Total Successfull Transaction</p>
                 <p className={`pl-[1vw] mb-[2vh] ${style.Indicator}`}>A - Total Attemps</p>
