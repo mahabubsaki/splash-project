@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
 import ReactSlider from 'react-slider'
@@ -17,12 +17,15 @@ import SwipeButtons from './SwipeButtons';
 
 const Withdraw = () => {
     const [money, setMoney] = useState(5000)
-    const { bankOwner, provider, setProvider } = useContext(AppContext)
+    const { bankOwner, provider, setProvider, navOpen, setNavOpen } = useContext(AppContext)
     const [openPopUp, setOpenPopUp] = useState(false)
     const navigate = useNavigate()
     const handleBack = () => {
         navigate('/home')
     }
+    useEffect(() => {
+        setNavOpen(false)
+    })
     const handleSetInput = (value) => {
         setMoney(value)
         document.getElementById('range').value = value
@@ -103,6 +106,7 @@ const Withdraw = () => {
             </div>
             <SwipeButtons />
         </div>
+
     );
 };
 

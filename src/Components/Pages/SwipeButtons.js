@@ -6,12 +6,15 @@ const SwipeButtons = () => {
         console.log('s');
     }
     return (
-
-        <div className="w-[300px]">
-            <ReactSwipeButton text="SWIPE TO UNLOCK"
-                color="#000"></ReactSwipeButton>
-        </div>
-
+        <>
+            <div className="w-2/3 mx-auto mt-[3vh]">
+                <ReactSwipeButton text="Swipe To Withdraw"
+                    color="#4F1EE6"></ReactSwipeButton>
+                <div className="my-[3vh]">
+                    <h1 className="text-transparent">t</h1>
+                </div>
+            </div>
+        </>
     );
 };
 

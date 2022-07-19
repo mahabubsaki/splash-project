@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import { set } from 'date-fns/esm';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../../App';
 import style from '../../Styles/Home.module.css'
 import profile from '../Assets/pic.png'
 
 const HomeTop = () => {
     const navigate = useNavigate()
+    const { navOpen, setNavOpen } = useContext(AppContext)
     const [notifications, setNotifications] = useState(true)
+    const handleOpen = () => {
+        if (!navOpen) {
+            setNavOpen(true)
+        }
+    }
     return (
         <div className={`${style.TopPart} h-[34vh] px-[4.2vw] pt-[8vh] relative z-10 mb-[7.6vh]`}>
             <div className="flex items-center justify-between mb-[3.5vh]">
-                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer" onClick={handleOpen} >
                     <rect x="23.6197" y="14" width="23.6198" height="2" rx="1" transform="rotate(180 23.6197 14)" fill="white" />
                     <rect x="17.458" y="8" width="17.4581" height="2" rx="1" transform="rotate(180 17.458 8)" fill="white" />
                     <rect x="23.6197" y="2" width="23.6198" height="2" rx="1" transform="rotate(180 23.6197 2)" fill="white" />
