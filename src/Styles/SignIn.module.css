@@ -165,3 +165,19 @@
 .Checkbox2 input[type='checkbox']:focus + label::before {
   outline: 0;
 }
+.balance {
+  background-image: url('../Components/Assets/Rectangle\ 78asdasd.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.popup::after {
+  content: '';
+  position: absolute;
+  background-color: #dddddd;
+  height: 5px;
+  border-radius: 10px;
+  width: 72%;
+  bottom: -8px;
+  opacity: 0.6;
+  left: 15%;
+}

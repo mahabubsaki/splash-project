@@ -149,7 +149,7 @@ const Overview = () => {
                     </LineChart>
                 </ResponsiveContainer>
             </div>
-            <div className="pl-[5.2vw] pr-[3.4vw] pb-[11vh] text-[13.5px]">
+            <div className="pl-[5.2vw] pr-[3.4vw] pb-[13vh] text-[13.5px]">
                 <p className={`pl-[1vw] mb-[2vh] ${style.Indicator}`}>STA - Total Successfull Transaction Amount</p>
                 <p className={`pl-[1vw] mb-[2vh] ${style.Indicator}`}>ST - Total Successfull Transaction</p>
                 <p className={`pl-[1vw] mb-[2vh] ${style.Indicator}`}>A - Total Attemps</p>

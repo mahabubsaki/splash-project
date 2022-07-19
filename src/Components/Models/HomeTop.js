@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import style from '../../Styles/Home.module.css'
 import profile from '../Assets/pic.png'
 
 const HomeTop = () => {
+    const navigate = useNavigate()
     const [notifications, setNotifications] = useState(true)
     return (
         <div className={`${style.TopPart} h-[34vh] px-[4.2vw] pt-[8vh] relative z-10 mb-[7.6vh]`}>
@@ -43,7 +45,7 @@ const HomeTop = () => {
             </div>
             <div className="absolute rounded-[15px] left-0 px-[6.9vw] pt-[2vh] pb-[1vh] mx-[4.2vw] right-0 bottom-[-5vh] bg-[white] z-20 shadow-lg">
                 <div className="flex justify-between items-center">
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center cursor-pointer" onClick={() => navigate('/withdraw')}>
                         <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M25.7 2.16675H2.30002C1.82135 2.16675 1.43335 2.55474 1.43335 3.03341V5.63342H26.5667V3.03341C26.5667 2.55474 26.1787 2.16675 25.7 2.16675Z" fill="#FEBC11" />
                             <path d="M1.43335 5.63354H26.5667V6.50021H1.43335V5.63354Z" fill="#78B9EB" />
