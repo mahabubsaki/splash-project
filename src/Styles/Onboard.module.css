@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+.Container {
+  font-family: 'DM Sans', sans-serif;
+}
 .Span {
   position: relative;
 }
@@ -5,45 +9,103 @@
   content: '';
   position: absolute;
   background-color: #ffd400;
-  height: 6px;
+  height: 8px;
   width: 100%;
-  bottom: 5px;
-  opacity: 0.6;
+  bottom: 1.6vw;
+  z-index: -1;
   left: 0;
 }
+.Span2 {
+  position: relative;
+}
+.Span2::before {
+  content: '';
+  position: absolute;
+  background-color: #ffd400;
+  height: 8px;
+  width: 99%;
+  bottom: 2.1335vw;
+  z-index: -1;
+  left: 2%;
+}
+.Span3 {
+  position: relative;
+}
+.Span3::before {
+  content: '';
+  position: absolute;
+  background-color: #ffd400;
+  height: 8px;
+  width: 93%;
+  bottom: 2.5vw;
+  z-index: -1;
+}
 .BottomSection {
-  background-image: url('../Components/Assets/Vector\ 3shadow-vecotr.png');
+  background-image: url('../Components/Assets/Vector\ 4.svg');
   background-repeat: no-repeat;
-  background-position: 100% 32%;
+  background-position: calc(7.7vw - -45.06vw) -17%;
 }
 .BottomSection2 {
   background-image: url('../Components/Assets/Vector\ 52ndvector.png');
   background-repeat: no-repeat;
-  background-position: 0% 70%;
+  background-position: 0% -12vh;
+  filter: drop-shadow(0px 3px 20px #d4d0ff);
 }
 .SkipBtn {
   font-weight: 500;
   color: #3c2cf8;
-  font-size: 17px;
-  line-height: 18px;
-  box-shadow: 0px, 0px rgba(139, 165, 255, 0.63);
-}
-.NextBtn,
-.SignIn,
-.Register {
-  border-radius: 15px;
-  font-weight: 500;
   font-size: 18px;
   line-height: 18px;
-  box-shadow: 0px, 3px #d4d0ff;
+  cursor: pointer;
+  letter-spacing: -0.165px;
+  text-shadow: 0px 0px 16px rgba(139, 165, 255, 0.63);
+}
+.NextBtn {
+  border-radius: 4vw;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 0px;
+  color: #ffffff;
+  letter-spacing: -0.165px;
+  background-color: #3c2cf8;
+  box-shadow: 0px 4px 10px #afcdfb;
+  padding: 5.334vw 3.73vw 5.8667vw 4.53vw;
+}
+.SignIn {
+  border-radius: 4vw;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 4.8vw;
+  line-height: 0px;
+  letter-spacing: -0.165px;
   color: #ffffff;
   background-color: #3c2cf8;
-  padding: 15px 18px;
+  box-shadow: 0px 4px 10px #afcdfb;
+  padding: 4.334vw 5.334vw 3.334vw 3.2vw;
 }
+.Register {
+  border-radius: 4vw;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  font-size: 4.8vw;
+  line-height: 0px;
+  letter-spacing: -0.165px;
+  color: #ffffff;
+  background-color: #3c2cf8;
+  box-shadow: 0px 4px 10px #afcdfb;
+  padding: 4.5334vw 6.1334vw 4vw 2.9334vw;
+}
+
 .PreviousBtn {
-  padding: 15px;
+  width: 11.5vw;
+  height: 11.2vw;
   background-color: #3c2cf8;
   border-radius: 50%;
   color: #ffffff;
+  box-shadow: 0px 4px 10px #afcdfb;
   position: relative;
 }

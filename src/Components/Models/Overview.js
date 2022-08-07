@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import style from '../../Styles/Home.module.css'
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, } from 'recharts';
+import styles from '../../Styles/Home.module.css'
 const Overview = () => {
     const days = [
         {
@@ -119,9 +120,9 @@ const Overview = () => {
         }
     }
     return (
-        <>
-            <div className="pl-[4.2vw] pr-[3.4vw]">
-                <div className="flex justify-between items-center mb-[4vh] px-[2px]">
+        <div className={`${styles.Transactions}`}>
+            <div className="pl-[4.2vw] pr-[4.5vw]">
+                <div className="flex justify-between items-center mb-[33px] px-[2px]">
                     <p className="text-[16px] font-medium">Transactions Overview</p>
                     <select defaultValue={`day`} className="p-1 rounded-md bg-[#504DE5] bg-opacity-20 text-[#504DE5] text-[13.5px]" onChange={handleChart}>
                         <option value="day">Day</option>
@@ -130,7 +131,7 @@ const Overview = () => {
                     </select>
                 </div>
             </div>
-            <div className="px-[3.4vw] mb-[2vh] w-full h-[50vh]">
+            <div className="pl-[5.3vw] pr-[3.4vw] mb-[16px] w-full h-[175px]">
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart
                         data={data}
@@ -149,12 +150,12 @@ const Overview = () => {
                     </LineChart>
                 </ResponsiveContainer>
             </div>
-            <div className="pl-[5.2vw] pr-[3.4vw] pb-[13vh] text-[13.5px]">
-                <p className={`pl-[1vw] mb-[2vh] ${style.Indicator}`}>STA - Total Successfull Transaction Amount</p>
-                <p className={`pl-[1vw] mb-[2vh] ${style.Indicator}`}>ST - Total Successfull Transaction</p>
-                <p className={`pl-[1vw] mb-[2vh] ${style.Indicator}`}>A - Total Attemps</p>
+            <div className="pl-[5.2vw] pr-[3.4vw] pb-[82px] text-[13.5px]">
+                <p className={`pl-[1vw] mb-[7px] ${style.Indicator}`}>STA - Total Successfull Transaction Amount</p>
+                <p className={`pl-[1vw] mb-[7px] ${style.Indicator}`}>ST - Total Successfull Transaction</p>
+                <p className={`pl-[1vw] mb-[7px] ${style.Indicator}`}>A - Total Attemps</p>
             </div>
-        </>
+        </div>
     );
 };
 

@@ -1,9 +1,8 @@
 .Input {
   border: 2px solid #e5e5e5;
-  border-radius: 10px;
-  padding: 9px;
+  border-radius: 2.667vw;
+  padding: 2.667vw 3.7334vw 2.667vw 4.2667vw;
   width: 100%;
-  margin-top: 8px;
   background-color: #f8f8f8;
 }
 .Input:focus {
@@ -11,11 +10,26 @@
   outline: none;
   background-color: rgba(20, 0, 255, 0.06);
 }
-
+.SigninTop {
+  background-image: url('../Components/Assets/Ellipse\ 1circle.svg');
+  background-repeat: no-repeat;
+  background-position: 37vw 5.5vw;
+}
+.RegTop {
+  background-image: url('../Components/Assets/Ellipse\ 1circle.svg');
+  background-repeat: no-repeat;
+  background-position: 30vw 2.5vh;
+}
+.Withdraw {
+  background-image: url('../Components/Assets/Ellipse\ 1withdraw.svg');
+  background-repeat: no-repeat;
+  background-position: 33vw 2.5vh;
+}
 .Checkbox {
-  width: 50%;
   position: relative;
+  cursor: none;
   display: block;
+  caret-color: rgba(0, 0, 0, 0);
 }
 
 .Checkbox input[type='checkbox'] {
@@ -31,29 +45,31 @@
 .Checkbox label:before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0;
+  left: -0.8vw;
+  top: 1.334vw;
   margin: 4px;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
+  background-color: #f8f8f8;
   transition: transform 0.28s ease;
-  border-radius: 3px;
-  border: 2px solid #665af0;
+  border-radius: 5px;
+  border: 1px solid #665af0;
 }
 .Checkbox label:after {
   content: '';
   display: block;
-  width: 10px;
-  height: 5px;
+  width: 7px;
+  height: 4px;
   border-bottom: 2px solid #665af0;
   border-left: 2px solid #665af0;
   -webkit-transform: rotate(-45deg) scale(0);
   transform: rotate(-45deg) scale(0);
   transition: transform ease 0.25s;
   will-change: transform;
+  border-radius: 4px;
   position: absolute;
-  top: 12px;
-  left: 10px;
+  top: 14px;
+  left: 6px;
 }
 .Checkbox input[type='checkbox']:checked ~ label::before {
   color: #665af0;
@@ -67,7 +83,6 @@
 .Checkbox label {
   height: 34px;
   display: block;
-  padding-left: 40px;
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
@@ -87,7 +102,36 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 18px;
-  box-shadow: 0px, 3px #d4d0ff;
+  filter: drop-shadow(0px 4px 10px #afcdfb);
+  color: #ffffff;
+  background-color: #3c2cf8;
+  padding: 15px 18px;
+}
+.Sign {
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  filter: drop-shadow(0px 4px 10px #afcdfb);
+  color: #ffffff;
+  background-color: #3c2cf8;
+  padding: 15px 0px 15px 0px;
+}
+.Onbord3 {
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  box-shadow: 0px 4px 10px #afcdfb;
+  color: #ffffff;
+  background-color: #3c2cf8;
+  padding: 15px 18px;
+}
+.Register {
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
   color: #ffffff;
   background-color: #3c2cf8;
   padding: 15px 18px;
@@ -120,8 +164,8 @@
   width: 22px;
   height: 22px;
   transition: transform 0.28s ease;
-  border-radius: 3px;
-  border: 2px solid #665af0;
+  border-radius: 5px;
+  border: 1px solid #665af0;
 }
 .Checkbox2 label:after {
   content: '';
@@ -153,7 +197,7 @@
   padding-left: 40px;
   margin-bottom: 0;
   font-weight: normal;
-  cursor: pointer;
+  cursor: none;
 }
 .Checkbox2 label span {
   font-size: 13px;

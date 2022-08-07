@@ -12,7 +12,7 @@ const Home = () => {
     }, [])
     return (
         <>
-            <div className="animate__animated animate__fadeInRightBig animate__faster bg-[#e5e5e5] rounded-3xl">
+            <div className="animate__animated animate__fadeInRightBig animate__faster bg-[#FFFFFF] rounded-3xl">
                 <HomeTop />
                 <Services />
                 <OfferSwipper />

@@ -1,14 +1,13 @@
-.ForgetText {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 24px;
-  color: #232440;
+.ForgetTop {
+  background-image: url('../Components/Assets/Ellipse\ 1resetexlipse.svg');
+  background-repeat: no-repeat;
+  background-position: 45vw 4vh;
 }
 .Input {
   border: 2px solid #e5e5e5;
-  background-color: transparent;
-  border-radius: 10px;
-  padding: 9px;
+  background-color: #f8f8f8;
+  border-radius: 2.667vw;
+  padding: 2.667vw 3.7334vw 2.667vw 4.2667vw;
   width: 100%;
 }
 .Input:focus {
@@ -17,14 +16,25 @@
   background-color: rgba(20, 0, 255, 0.06);
 }
 .GetCode {
-  border-radius: 15px;
+  border-radius: 4vw;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 18px;
-  box-shadow: 0px, 3px #d4d0ff;
+  width: 100%;
+  font-size: 4.2667vw;
+  line-height: 5.334vw;
+  filter: drop-shadow(0px 4px 10px #afcdfb);
   color: #ffffff;
   background-color: #3c2cf8;
-  padding: 15px 18px;
+  padding: 4vw 0px 4vw 0px;
+}
+.ResetPassword {
+  border-radius: 4vw;
+  font-weight: 500;
+  width: 100%;
+  font-size: 4.2667vw;
+  line-height: 5.334vw;
+  color: #ffffff;
+  background-color: #3c2cf8;
+  padding: 4vw 0px 4vw 0px;
 }
 .Span {
   position: relative;

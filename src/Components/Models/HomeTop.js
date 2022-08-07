@@ -15,8 +15,8 @@ const HomeTop = () => {
         }
     }
     return (
-        <div className={`${style.TopPart} h-[34vh] px-[4.2vw] pt-[8vh] relative z-10 mb-[7.6vh]`}>
-            <div className="flex items-center justify-between mb-[3.5vh]">
+        <div className={`${style.TopPart} ${navOpen ? 'h-[255px]' : 'h-[232px]'} px-[4.2vw] pt-[64px] relative z-10 mb-[62px]`}>
+            <div className="flex items-center justify-between mb-[36px]">
                 <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer" onClick={handleOpen} >
                     <rect x="23.6197" y="14" width="23.6198" height="2" rx="1" transform="rotate(180 23.6197 14)" fill="white" />
                     <rect x="17.458" y="8" width="17.4581" height="2" rx="1" transform="rotate(180 17.458 8)" fill="white" />
@@ -43,7 +43,7 @@ const HomeTop = () => {
             </div>
             <div className="flex justify-between items-center">
                 <div>
-                    <p className="text-[white] text-[15px] font-medium mb-[1vh] leading-[18px]">Balance</p>
+                    <p className="text-[white] text-[15px] font-medium mb-[8px] leading-[18px]">Balance</p>
                     <span className="text-[white] text-[16px] font-medium leading-[18px] mr-[1.5vw]">18,242.34</span>
                     <span className="text-[white] text-[13px] font-medium leading-[18px]">Taka</span>
                 </div>
@@ -51,7 +51,7 @@ const HomeTop = () => {
                     <img src={profile} alt="" className='w-full h-full rounded-full' />
                 </div>
             </div>
-            <div className="absolute rounded-[15px] left-0 px-[6.9vw] pt-[2vh] pb-[1vh] mx-[4.2vw] right-0 bottom-[-5vh] bg-[white] z-20 shadow-lg">
+            <div className="absolute rounded-[15px] left-0 px-[6.9vw] pt-[16px] pb-[8px] mx-[4.2vw] right-0 bottom-[-35px] bg-[white] z-20 shadow-lg">
                 <div className="flex justify-between items-center">
                     <div className="flex flex-col items-center cursor-pointer" onClick={() => navigate('/withdraw')}>
                         <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">

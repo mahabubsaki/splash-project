@@ -1,11 +1,11 @@
 import React from 'react';
-
+import style from '../../Styles/Home.module.css'
 const Services = () => {
     return (
-        <div className="px-[4.5vw] mb-[3vh]">
-            <p className="font-medium text-[16px] mb-[2vh]">Services</p>
-            <div className="pl-[4px] flex justify-between flex-wrap gap-3">
-                <div className="flex flex-col items-center">
+        <div className="pl-[5.6vw] pr-[4.5vw] mb-[25px]">
+            <p className="font-medium text-[16px] mb-[17px]">Services</p>
+            <div className={`flex ${style.NunitoPart}`}>
+                <div className="flex flex-col items-center mr-[9.6vw] text-center">
                     <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.18701" y="2.1875" width="30.625" height="30.625" rx="9" fill="#F8FBFF" />
                         <g clip-path="url(#clip0_74_102)">
@@ -22,9 +22,9 @@ const Services = () => {
                             </clipPath>
                         </defs>
                     </svg>
-                    <p className="text-[12px] mt-[1vh]">Send Money</p>
+                    <p className="text-[12px] mt-[8px]">Send Money</p>
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center mr-[10.4vw] text-center">
                     <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.18732" y="2.1875" width="30.625" height="30.625" rx="9" fill="#FFF6A8" />
                         <rect x="0.500061" y="0.5" width="34" height="34" rx="8.5" stroke="#F8B6B6" />
@@ -43,9 +43,9 @@ const Services = () => {
                         </defs>
                     </svg>
 
-                    <p className="text-[12px] mt-[1vh]">Recharge Money</p>
+                    <p className="text-[12px] mt-[8px]">Recharge Money</p>
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center mr-[9vw] text-center">
                     <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.18781" y="2.1875" width="30.625" height="30.625" rx="9" fill="#F8FBFF" />
                         <g clip-path="url(#clip0_74_178)">
@@ -68,9 +68,9 @@ const Services = () => {
                         </defs>
                     </svg>
 
-                    <p className="text-[12px] mt-[1vh]">Bill Pay</p>
+                    <p className="text-[12px] mt-[8px]">Bill Pay</p>
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center text-center">
                     <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.18768" y="2.1875" width="30.625" height="30.625" rx="9" fill="#FFF6A8" />
                         <path d="M15.6209 16.7735H12.653C11.7569 16.7735 11.0278 16.0444 11.0278 15.1483V12.1804C11.0278 11.2843 11.7569 10.5552 12.653 10.5552H15.6209C16.517 10.5552 17.2461 11.2843 17.2461 12.1804V15.1483C17.2461 16.0444 16.517 16.7735 15.6209 16.7735ZM12.653 11.6858C12.3803 11.6858 12.1584 11.9077 12.1584 12.1804V15.1483C12.1584 15.421 12.3803 15.6429 12.653 15.6429H15.6209C15.8936 15.6429 16.1155 15.421 16.1155 15.1483V12.1804C16.1155 11.9077 15.8936 11.6858 15.6209 11.6858H12.653Z" fill="#233862" />
@@ -83,7 +83,7 @@ const Services = () => {
                         <rect x="0.499939" y="0.5" width="34" height="34" rx="8.5" stroke="#F8B6B6" />
                     </svg>
 
-                    <p className="text-[12px] mt-[1vh]">My Qr Code</p>
+                    <p className="text-[12px] mt-[8px]">My Qr Code</p>
                 </div>
             </div>
         </div>
