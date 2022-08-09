@@ -24,8 +24,7 @@ const Withdraw = () => {
     const range = useRef()
     const [money, setMoney] = useState(5000)
     const [actualMoney, setActualMoney] = useState('5,000')
-    const { bankOwner, provider, setProvider, setNavOpen, setCurrentLoc } = useContext(AppContext)
-    const [openPopUp, setOpenPopUp] = useState(false)
+    const { bankOwner, provider, setProvider, setNavOpen, setCurrentLoc, openPopUp, setOpenPopUp } = useContext(AppContext)
     const navigate = useNavigate()
     const handleBack = () => {
         navigate('/home')
@@ -53,7 +52,7 @@ const Withdraw = () => {
         <>
             {processing && <WithdrawProccessModal />}
             <div className="animate__animated animate__fadeInRightBig animate__faster relative overflow-hidden">
-                <div className={`absolute duration-200 ${openPopUp ? 'bottom-[0vh]' : 'bottom-[-50vh] overflow-y-visible'} h-[50vh] w-full rounded-tl-[50px] rounded-tr-[50px] bg-white border border-[#F8B6B6] z-20 px-[25px] pt-[12px]`}>
+                <div className={`absolute duration-200 ${openPopUp ? 'bottom-[-3vh]' : 'bottom-[-55.1075vh] overflow-y-visible'} h-[55.1075vh] w-full rounded-tl-[50px] rounded-tr-[50px] bg-white border border-[#F8B6B6] z-20 px-[25px] pt-[12px]`}>
                     <div className="flex justify-center">
                         <span className={`relative text-[18px] mb-[3vh] font-medium ${style.popup}`}>Select Mobile Banking </span>
                     </div>

@@ -1,4 +1,5 @@
 .Input {
+  margin-top: 1vh;
   border: 2px solid #e5e5e5;
   border-radius: 2.667vw;
   padding: 2.667vw 3.7334vw 2.667vw 4.2667vw;
@@ -197,7 +198,7 @@
   padding-left: 40px;
   margin-bottom: 0;
   font-weight: normal;
-  cursor: none;
+  cursor: pointer;
 }
 .Checkbox2 label span {
   font-size: 13px;

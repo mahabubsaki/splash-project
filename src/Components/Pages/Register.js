@@ -123,12 +123,12 @@ const Register = () => {
                         <div className="relative mb-[28px]">
                             <label htmlFor="password" className="text-[14px] leading-[20px] text-[#6e6e82] mb-[8px]">Password</label><br />
                             <input required name="password" type={showPass ? 'text' : 'password'} id="password" placeholder="At least 8 characters" className={style.Input}></input>
-                            {showPass ? <img src={show} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-4 top-[44px] cursor-pointer' /> : <img src={hide} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-4 top-[44px] cursor-pointer' />}
+                            {showPass ? <img src={show} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-[5.5%] top-[57%] cursor-pointer' /> : <img src={hide} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-[5.5%] top-[57%] cursor-pointer' />}
                         </div>
                         <div className="relative mb-[28px]">
                             <label htmlFor="confirm-password" className="text-[14px] leading-[20px] text-[#6e6e82] mb-[8px]">Confirm Password</label><br />
                             <input required name="confirm" type={showPass1 ? 'text' : 'password'} id="confirm-password" placeholder="At least 8 characters" className={style.Input}></input>
-                            {showPass1 ? <img src={show} onClick={() => setShowPass1(!showPass1)} alt="" className='absolute right-4 top-[44px] cursor-pointer' /> : <img src={hide} onClick={() => setShowPass1(!showPass1)} alt="" className='absolute right-4 top-[44px] cursor-pointer' />}
+                            {showPass1 ? <img src={show} onClick={() => setShowPass1(!showPass1)} alt="" className='absolute right-[5.5%] top-[57%] cursor-pointer' /> : <img src={hide} onClick={() => setShowPass1(!showPass1)} alt="" className='absolute right-[5.5%] top-[57%] cursor-pointer' />}
                         </div>
                         <div className="flex pr-[5.3vw] mb-[34px]">
                             <div className={`${style.Checkbox2} leading-5 mr-[2vw]`}>

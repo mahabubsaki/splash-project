@@ -60,12 +60,12 @@ const SignIn = () => {
                 <form autoComplete='off' onSubmit={handleLogin}>
                     <div className="relative mb-[3.36vh]">
                         <label htmlFor="phone" className="text-[3.7334vw] leading-[5.334vw] text-[#6e6e82]">Phone</label><br />
-                        <input type="tel" name='phone' onChange={handlePhoneNumber} placeholder='Phone Number' id="phone" className={`${style.Input} mt-[1vh]`}></input>
+                        <input type="tel" name='phone' onChange={handlePhoneNumber} placeholder='Phone Number' id="phone" className={`${style.Input}`}></input>
                         {userNumber && <img src={success} alt="" className='absolute right-[5.5%] top-[57%]' />}
                     </div>
                     <div className="relative mb-[0.06vh]">
                         <label htmlFor="password" className="text-[3.7334vw] leading-[5.334vw] text-[#6e6e82]">Password</label><br />
-                        <input name='password' type={showPass ? 'text' : 'password'} id="password" placeholder="At least 8 characters" className={`${style.Input} mt-[1vh]`}></input>
+                        <input name='password' type={showPass ? 'text' : 'password'} id="password" placeholder="At least 8 characters" className={`${style.Input}`}></input>
                         {showPass ? <img src={show} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-[5.5%] top-[57%] cursor-pointer' /> : <img src={hide} onClick={() => setShowPass(!showPass)} alt="" className='absolute right-[5.5%] top-[57%] cursor-pointer' />}
                     </div>
                     <div className="flex justify-between relative items-center mb-[4.38vh]">

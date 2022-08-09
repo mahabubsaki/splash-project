@@ -37,10 +37,11 @@ function App() {
   const [navOpen, setNavOpen] = useState(false)
   const [currLoc, setCurrentLoc] = useState('home')
   const [processing, setProcessing] = useState(false)
+  const [openPopUp, setOpenPopUp] = useState(false)
   const { pathname } = useLocation()
   return (
     <>
-      <AppContext.Provider value={{ firstOnBoard, setFirstOnBoard, secondOnBoard, setSecondOnBoard, thirdOnBoard, setThirdOnBoard, signInLeft, setSignInLeft, signPageLeft, setSignPageLeft, forgetPageLeft, setForgetPageLeft, bankOwner, setBankOwner, provider, setProvider, navOpen, setNavOpen, currLoc, setCurrentLoc, processing, setProcessing }}>
+      <AppContext.Provider value={{ firstOnBoard, setFirstOnBoard, secondOnBoard, setSecondOnBoard, thirdOnBoard, setThirdOnBoard, signInLeft, setSignInLeft, signPageLeft, setSignPageLeft, forgetPageLeft, setForgetPageLeft, bankOwner, setBankOwner, provider, setProvider, navOpen, setNavOpen, currLoc, setCurrentLoc, processing, setProcessing, openPopUp, setOpenPopUp }}>
         <div className={`root ${navOpen ? 'overflow-hidden' : 'overflow-auto'} duration-300`}>
           {!navOpen && <Navigation />}
           <div className={`${(navOpen && pathname.includes('home')) ? `overflow-hidden` : 'overflow-auto'} ${pathname.includes('home') && 'flex  duration-300'}`}>
