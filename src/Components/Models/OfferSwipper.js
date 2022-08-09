@@ -30,7 +30,7 @@ const OfferSwipper = () => {
             </div>
             <div className="flex justify-center gap-[6px]">
                 <div className={`${index === 0 ? 'w-[6vw] bg-opacity-[71%]' : 'w-[3vw] bg-opacity-[27%]'} rounded-[5px] bg-[#010BFF] h-[4px] cursor-pointer`}></div>
-                <div className={`${index === 1 ? 'w-[6vw] bg-opacity-[71%]' : 'w-[3vw] bg-opacity-[27%]'} rounded-[5px] bg-[#010BFF] h-[4px] cursor-pointer`} o></div>
+                <div className={`${index === 1 ? 'w-[6vw] bg-opacity-[71%]' : 'w-[3vw] bg-opacity-[27%]'} rounded-[5px] bg-[#010BFF] h-[4px] cursor-pointer`}></div>
                 <div className={`${index === 2 ? 'w-[6vw] bg-opacity-[71%]' : 'w-[3vw] bg-opacity-[27%]'} rounded-[5px] bg-[#010BFF] h-[4px] cursor-pointer`} ></div>
                 <div className={`${index === 3 ? 'w-[6vw] bg-opacity-[71%]' : 'w-[3vw] bg-opacity-[27%]'} rounded-[5px] bg-[#010BFF] h-[4px] cursor-pointer`}></div>
             </div>

@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { AppContext } from '../../App';
 import HomeTop from '../Models/HomeTop';
 import Navigation from '../Models/Navigation';
 import OfferSwipper from '../Models/OfferSwipper';
@@ -7,7 +8,9 @@ import Services from '../Models/Services';
 import Transactions from '../Models/Transactions';
 
 const Home = () => {
+    const { setCurrentLoc } = useContext(AppContext)
     useEffect(() => {
+        setCurrentLoc('home')
         window.scrollTo(0, 0);
     }, [])
     return (

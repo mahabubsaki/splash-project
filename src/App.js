@@ -20,6 +20,7 @@ import { FiUsers } from 'react-icons/fi'
 import { MdOutlineLogout } from 'react-icons/md'
 import privacy from './Components/Assets/icon.svg'
 import styles from '../src/Styles/Home.module.css'
+import Dummy from './Components/Pages/Dummy';
 export const AppContext = React.createContext();
 
 
@@ -34,10 +35,12 @@ function App() {
   const [bankOwner, setBankOwner] = useState('')
   const [navState, setNavState] = useState('home')
   const [navOpen, setNavOpen] = useState(false)
+  const [currLoc, setCurrentLoc] = useState('home')
+  const [processing, setProcessing] = useState(false)
   const { pathname } = useLocation()
   return (
     <>
-      <AppContext.Provider value={{ firstOnBoard, setFirstOnBoard, secondOnBoard, setSecondOnBoard, thirdOnBoard, setThirdOnBoard, signInLeft, setSignInLeft, signPageLeft, setSignPageLeft, forgetPageLeft, setForgetPageLeft, bankOwner, setBankOwner, provider, setProvider, navOpen, setNavOpen }}>
+      <AppContext.Provider value={{ firstOnBoard, setFirstOnBoard, secondOnBoard, setSecondOnBoard, thirdOnBoard, setThirdOnBoard, signInLeft, setSignInLeft, signPageLeft, setSignPageLeft, forgetPageLeft, setForgetPageLeft, bankOwner, setBankOwner, provider, setProvider, navOpen, setNavOpen, currLoc, setCurrentLoc, processing, setProcessing }}>
         <div className={`root ${navOpen ? 'overflow-hidden' : 'overflow-auto'} duration-300`}>
           {!navOpen && <Navigation />}
           <div className={`${(navOpen && pathname.includes('home')) ? `overflow-hidden` : 'overflow-auto'} ${pathname.includes('home') && 'flex  duration-300'}`}>
@@ -49,22 +52,22 @@ function App() {
                 <div className={`pl-[7.7vw] ${styles.Transactions}`}>
                   <h1 className='font-medium text-[18px] mb-[31px]'>Main Menu</h1>
                   <p className={`mb-[25px] text-[15px] flex items-center gap-2 cursor-pointer relative ${navState === 'home' && 'text-[#3C2CF8]'}`} onClick={() => setNavState('home')}><BiHomeAlt className='text-2xl' />Home
-                    {navState === 'home' && <div className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></div>}
+                    {navState === 'home' && <span className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></span>}
                   </p>
                   <p className={`mb-[23px] text-[15px] flex items-center gap-2 cursor-pointer relative ${navState === 'transaction' && 'text-[#3C2CF8]'}`} onClick={() => setNavState('transaction')}><TbReportSearch className='text-2xl' />Transaction History
-                    {navState === 'transaction' && <div className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></div>}
+                    {navState === 'transaction' && <span className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></span>}
                   </p>
                   <p className={`mb-[23px] text-[15px] flex items-center gap-2 cursor-pointer relative ${navState === 'overview' && 'text-[#3C2CF8]'}`} onClick={() => setNavState('overview')}><BsClipboardData className='text-2xl' /> Overview
-                    {navState === 'overview' && <div className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></div>}
+                    {navState === 'overview' && <span className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></span>}
                   </p>
                   <p className={`mb-[26px] text-[15px] flex items-center gap-2 cursor-pointer relative ${navState === 'refer' && 'text-[#3C2CF8]'}`} onClick={() => setNavState('refer')}><FiUsers className='text-2xl' /> Refer & Earn
-                    {navState === 'refer' && <div className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></div>}
+                    {navState === 'refer' && <span className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></span>}
                   </p>
                   <p className={`mb-[26px] text-[15px] flex items-center gap-2 cursor-pointer relative ${navState === 'terms' && 'text-[#3C2CF8]'}`} onClick={() => setNavState('terms')}><TbNotes className='text-2xl' /> Terms & Conditions
-                    {navState === 'terms' && <div className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></div>}
+                    {navState === 'terms' && <span className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></span>}
                   </p>
                   <p className={`mb-[54px] text-[15px] flex items-center gap-2 cursor-pointer relative ${navState === 'privacy' && 'text-[#3C2CF8]'}`} onClick={() => setNavState('privacy')}><img src={privacy} alt="" /> Privacy & Policy
-                    {navState === 'privacy' && <div className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></div>}
+                    {navState === 'privacy' && <span className="absolute w-[10px] top-0 -left-[8.2vw] bottom-0 bg-[#3C2CF8] rounded-r-[7px]"></span>}
                   </p>
 
                   <p className="mb-[86px] text-[15px] flex items-center gap-2 cursor-pointer"><MdOutlineLogout className='text-2xl' /> Logout</p>
@@ -83,6 +86,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/withdraw" element={<Withdraw />} />
                 <Route path="/add-bank" element={<WithdrawForm />} />
+                <Route path="/dummy" element={<Dummy />} />
               </Routes>
             </div>
           </div>

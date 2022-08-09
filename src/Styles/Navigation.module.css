@@ -1,9 +1,61 @@
 .mainbox {
-  filter: drop-shadow(0px -4px 60px rgba(1, 11, 255, 0.06));
-  height: 61px;
-  width: 100%;
-  background-color: #fff;
-  padding: 18px 11vw 18px 14.9vw;
+}
+.second {
+  width: 100vw;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  padding-left: 52px;
+  padding-right: 38px;
+}
+.processOk {
+  background-color: rgba(255, 255, 255, 0.2);
+  filter: blur(1.5px);
+}
+.processNotOk {
+  background-color: white;
+  box-shadow: 0px -4px 60px 0px #010bff0f;
+}
+.first {
+  height: 16px;
+  width: 100vw;
+  position: relative;
+}
+.iconsection {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.unactiveicon {
+  display: none;
+}
+.activeicon {
+  position: absolute;
+  width: 150px;
+  height: 65px;
+  top: 0px;
+}
+.activesvg {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.activeiconcircle {
+  height: 53px;
+  width: 53px;
+  position: absolute;
+  top: 0;
+  left: 42px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff6a8;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px rgba(5, 0, 255, 0.04);
+}
+.activeiconmain {
 }

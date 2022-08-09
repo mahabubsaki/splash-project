@@ -1,5 +1,5 @@
 import React from 'react';
-import okicon from '../Assets/ICON CHECKbigok.png'
+import okicon from '../Assets/ICON CHECKbiok.svg'
 import dots from '../Assets/DECORATIONsd.png'
 import style from '../../Styles/Forget.module.css'
 import { useNavigate } from 'react-router-dom';

@@ -3,7 +3,7 @@ import SwipeButton from 'react-swipezor'
 import ReactSwipeButton from 'react-swipe-button'
 import arrowswipe from '../Assets/arrow-right_minorswupearrow.svg'
 import { useEffect } from 'react';
-const SwipeButtons = () => {
+const SwipeButtons = ({ setProcessing }) => {
     const sliderRef = useRef()
     const dummy = useRef()
 
@@ -18,10 +18,11 @@ const SwipeButtons = () => {
             }
         }
         else if (percentage >= 97) {
-            setComplete(() => true)
             if (dummy.current) {
                 dummy.current.style.width = `100%`
             }
+            setComplete(() => true)
+            setProcessing(() => true)
         }
         else {
             if (sliderRef.current) {
@@ -53,7 +54,7 @@ const SwipeButtons = () => {
                 }
             }}
         >
-            <div className="ml-[12.8vw] my-[3.9vh] bg-[#4F1EE6] mr-[13.0667vw] border border-[#4F1EE6] relative p-[1.0667vw] rounded-[13.334vw]">
+            <div className="ml-[12.8vw] mb-[12.09vh] mt-[7.5268vh] bg-[#4F1EE6] mr-[13.0667vw] border border-[#4F1EE6] relative p-[1.0667vw] rounded-[13.334vw]">
                 <span className="absolute text-center text-[white] top-1/2 -translate-y-1/2 w-full text-[4.2667vw] font-medium leading-[7.4667vw] inline-block">Swipe To Withdraw</span>
                 {complete ? <div ref={dummy} className={`py-[5.604vw] relative rounded-[13.334vw] bg-[white] cursor-pointer`}>
                     <img src={arrowswipe} alt="" className="absolute top-1/2 pointer-events-none -translate-y-1/2 left-1/2 -translate-x-1/2" />
