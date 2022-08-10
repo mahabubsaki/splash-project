@@ -22,7 +22,7 @@ const WithdrawForm = () => {
             {done && <WithdrawSuccessModal />}
             <div className="animate__animated animate__fadeInRightBig animate__faster">
                 <div className={`py-[27px] relative ${style.Withdraw}`}>
-                    <img src={iconback} alt="" onClick={handleBack} className='absolute top-0 bottom-0 my-auto left-[6.1vw]' />
+                    <img src={iconback} alt="" onClick={handleBack} className='absolute cursor-pointer top-0 bottom-0 my-auto left-[6.1vw]' />
                     <p className="w-full text-center font-bold text-[24px] leading-[28px] text-[#232440]">Withdraw</p>
                 </div>
                 <div className="px-[5.8vw] pb-[35px]">

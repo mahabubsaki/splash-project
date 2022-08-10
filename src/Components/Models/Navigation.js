@@ -16,7 +16,7 @@ const Navigation = () => {
     return (
         <div className={`${(pathname.includes('home') || pathname.includes('dummy') || pathname.includes('withdraw')) ? 'fixed' : 'hidden'} bottom-0 left-0 right-0 bg-transparent flex justify-center items-end z-20`}>
             <div className={styles.mainbox}>
-                {(currLoc.includes('home') || currLoc.includes('pay') || currLoc.includes('search') || currLoc.includes('user')) && <div className={`${styles.first}`}>
+                {(currLoc.includes('home') || currLoc.includes('pay') || currLoc.includes('search') || currLoc.includes('user')) && <div className={`${styles.first} `}>
                     <div className={`${styles.activeicon} ${currLoc === 'home' && 'left-0'} ${currLoc === 'pay' && 'left-[141px]'} ${currLoc === 'search' && 'left-0'} ${currLoc === 'user' && 'left-0'}`} >
                         <div className={`${styles.activeiconcircle} `}>
                             {currLoc === 'home' && <img src={svg192} alt="" className={styles.activeiconmain} />}
@@ -24,7 +24,7 @@ const Navigation = () => {
                             {currLoc === 'search' && <img src={search} alt="" className={styles.activeiconmain} />}
                             {currLoc === 'user' && <img src={user} alt="" className={styles.activeiconmain} />}
                         </div>
-                        <svg className={styles.activesvg} xmlns="http://www.w3.org/2000/svg" width="149" height="49" viewBox="0 0 149 49" fill="none">
+                        <svg className={`${styles.activesvg}`} xmlns="http://www.w3.org/2000/svg" width="149" height="49" viewBox="0 0 149 49" fill="none">
                             <path d="M68.1206 49C28.1802 49 29.9576 0.102585 11.4851 0.102585H136.798C141.548 -0.128232 149 0.102585 149 0.102585H136.798C101.064 1.83908 108.061 49 68.1206 49Z" fill="#F9F9FF" />
                         </svg>
                     </div>
