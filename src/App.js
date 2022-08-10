@@ -20,7 +20,6 @@ import { FiUsers } from 'react-icons/fi'
 import { MdOutlineLogout } from 'react-icons/md'
 import privacy from './Components/Assets/icon.svg'
 import styles from '../src/Styles/Home.module.css'
-import Dummy from './Components/Pages/Dummy';
 export const AppContext = React.createContext();
 
 
@@ -87,7 +86,6 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/withdraw" element={<Withdraw />} />
                 <Route path="/add-bank" element={<WithdrawForm />} />
-                <Route path="/dummy" element={<Dummy />} />
               </Routes>
             </div>
           </div>

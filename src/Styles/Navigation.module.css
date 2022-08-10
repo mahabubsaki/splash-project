@@ -5,8 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 52px;
-  padding-right: 38px;
+  padding-left: 13.8667vw;
+  padding-right: 10.1334vw;
 }
 .processOk {
   background-color: rgba(255, 255, 255, 0.2);
@@ -17,13 +17,13 @@
   box-shadow: 0px -4px 60px 0px #010bff0f;
 }
 .first {
-  height: 16px;
+  height: 4.2667vw;
   width: 100vw;
   position: relative;
 }
 .iconsection {
-  height: 30px;
-  width: 30px;
+  height: 8vw;
+  width: 8vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,21 +34,23 @@
 }
 .activeicon {
   position: absolute;
-  width: 150px;
-  height: 65px;
+  width: 40vw;
+  height: 17.334vw;
   top: 0px;
 }
 .activesvg {
   position: absolute;
   bottom: 0px;
   left: 0px;
+  width: 39.7334vw;
+  height: 13.0667vw;
 }
 .activeiconcircle {
-  height: 53px;
-  width: 53px;
+  height: 14.1334vw;
+  width: 14.1334vw;
   position: absolute;
   top: 0;
-  left: 42px;
+  left: 11.2vw;
   z-index: 2;
   display: flex;
   justify-content: center;
