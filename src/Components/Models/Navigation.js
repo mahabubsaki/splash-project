@@ -17,7 +17,7 @@ const Navigation = () => {
         <div className={`${(pathname.includes('home') || pathname.includes('dummy') || pathname.includes('withdraw')) ? 'fixed' : 'hidden'} bottom-0 left-0 right-0 bg-transparent flex justify-center items-end z-20`}>
             <div className={styles.mainbox}>
                 {(currLoc.includes('home') || currLoc.includes('pay') || currLoc.includes('search') || currLoc.includes('user')) && <div className={`${styles.first} `}>
-                    <div className={`${styles.activeicon} ${currLoc === 'home' && 'left-0'} ${currLoc === 'pay' && 'left-[24vw]'} ${currLoc === 'search' && 'left-[49.5vw]'} ${currLoc === 'user' && 'right-0'}`} >
+                    <div className={`${styles.activeicon} ${currLoc === 'home' && 'left-0'} ${currLoc === 'pay' && 'left-[19.4667vw]'} ${currLoc === 'search' && 'left-[44vw]'} ${currLoc === 'user' && 'right-0'}`} >
                         <div className={`${styles.activeiconcircle} `}>
                             {currLoc === 'home' && <img src={svg192} alt="" className={styles.activeiconmain} />}
                             {currLoc === 'pay' && <img src={pay} alt="" className={styles.activeiconmain} />}
@@ -29,21 +29,21 @@ const Navigation = () => {
                         </svg>
                     </div>
                 </div>}
-                <div className={`${styles.second} ${processing ? styles.processOk : styles.processNotOk} ${pathname.includes('withdraw') ? 'h-[16.2667vw]' : 'h-[20.2667vw]'} bg-opacity-20`}>
+                <div className={`${styles.second} ${processing ? styles.processOk : styles.processNotOk} ${pathname.includes('withdraw') ? 'h-[18.2667vw]' : 'h-[20.2667vw]'} bg-opacity-20`}>
                     <div className={`${styles.iconsection}`} onClick={() => {
                         navigate('/home')
                         setCurrentLoc('home')
                     }}>
-                        <img src={home} alt="" className={`w-[6.667vw] h-[7.334vw] ${currLoc === 'home' && styles.unactiveicon}`} />
+                        <img src={home} alt="" className={`w-[6.667vw] h-[7.334vw]  z-[2] ${currLoc === 'home' && styles.unactiveicon}`} />
                     </div>
                     <div className={styles.iconsection} onClick={() => setCurrentLoc('pay')}>
-                        <img src={pay} alt="" className={`w-[6.2667vw] h-[6.9334vw] ${currLoc === 'pay' && styles.unactiveicon}`} />
+                        <img src={pay} alt="" className={`w-[6.2667vw] h-[6.9334vw] z-[2] ${currLoc === 'pay' && styles.unactiveicon}`} />
                     </div>
                     <div className={styles.iconsection} onClick={() => setCurrentLoc('search')}>
-                        <img src={search} alt="" className={`w-[6.9334vw] h-[6.9334vw] ${currLoc === 'search' && styles.unactiveicon}`} />
+                        <img src={search} alt="" className={`w-[6.9334vw] h-[6.9334vw] z-[2] ${currLoc === 'search' && styles.unactiveicon}`} />
                     </div>
                     <div className={styles.iconsection} onClick={() => setCurrentLoc('user')}>
-                        <img src={user} alt="" className={`w-[6.4vw] h-[6.9334vw] ${currLoc === 'user' && styles.unactiveicon}`} />
+                        <img src={user} alt="" className={`w-[6.4vw] h-[6.9334vw] z-[2] ${currLoc === 'user' && styles.unactiveicon}`} />
                     </div>
                 </div>
             </div>

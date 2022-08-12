@@ -41,7 +41,7 @@ const Withdraw = () => {
         }
     }, [money])
     const handleSetInput = (value) => {
-        setMoney(() => value)
+        setMoney(value)
         range.current.value = { min: 0, max: value }
     }
     const handleSetProvider = (value) => {
@@ -120,17 +120,18 @@ const Withdraw = () => {
                         />
 
                         <div className="flex justify-between text-[#232440
-] opacity-50 mt-[4px] text-[3.2vw] leading-[7.4667vw] mb-[2.41vh]">
+] opacity-50 mt-[4px] text-[3.2vw] leading-[7.4667vw]">
                             <p className="relative left-[-0.8vw]">0 ৳</p>
                             <p>500,000 ৳</p>
                         </div>
                     </div>
-                    <div className="flex justify-center leading-[7.4667vw] text-[3.2vw]">
-                        <button className={`rounded-[5px] px-[4.2667vw] mr-[4vw] border border-black border-opacity-50 ${money === 100 ? 'relative translate-y-[-1.344vh] bg-[#FFF6A8] z-[1] duration-500 pb-[0.8vw]' : 'bg-[#FDFDFD]'}`} onClick={() => handleSetInput(100)}><span>100</span><span className="ml-[2px]">৳</span></button>
-                        <button className={`rounded-[5px] px-[3.8667vw] mr-[5.8667vw] border border-black border-opacity-50 ${money === 500 ? 'relative translate-y-[-1.344vh] bg-[#FFF6A8] z-[1] duration-500 pb-[0.8vw]' : 'bg-[#FDFDFD]'}`} onClick={() => handleSetInput(500)}><span>500</span><span className="ml-[2px]">৳</span></button>
-                        <button className={`rounded-[5px] px-[3.2vw] mr-[3.2vw] border border-black border-opacity-50 ${money === 1000 ? 'relative translate-y-[-1.344vh] bg-[#FFF6A8] z-[1] duration-500 pb-[0.8vw]' : 'bg-[#FDFDFD]'}`} onClick={() => handleSetInput(1000)}><span>1000</span><span className="ml-[2px]">৳</span></button>
-                        <button className={`rounded-[5px] px-[4.1334vw] mr-[3.6vw] border border-black border-opacity-50 ${money === 5000 ? 'relative translate-y-[-1.344vh] bg-[#FFF6A8] z-[1] duration-500 pb-[0.8vw]' : 'bg-[#FDFDFD]'}`} onClick={() => handleSetInput(5000)}><span>5000</span><span className="ml-[2px]">৳</span></button>
-                        <button className={`rounded-[5px] px-[2.1334vw] border border-black border-opacity-50 ${money === 10000 ? 'relative translate-y-[-1.344vh] bg-[#FFF6A8] z-[1] duration-500 pb-[0.8vw]' : 'bg-[#FDFDFD]'}`} onClick={() => handleSetInput(10000)}><span>10000</span><span className="ml-[2px]">৳</span></button>
+                    {/* 2.41 */}
+                    <div className="flex py-[1.25vh] justify-center leading-[7.4667vw] text-[3.2vw]">
+                        <button className={`rounded-[5px] px-[4.2667vw] mr-[4vw] duration-500 border border-black border-opacity-50 ${money === 100 ? 'relative translate-y-[-1.344vh] bg-[#FFF6A8] z-[1]' : 'bg-[#FDFDFD]'}`} onClick={() => handleSetInput(100)}><span>100</span><span className="ml-[2px]">৳</span></button>
+                        <button className={`rounded-[5px] px-[3.8667vw] duration-500 mr-[5.8667vw] border border-black border-opacity-50 ${money === 500 ? 'relative translate-y-[-1.344vh] bg-[#FFF6A8] z-[1]' : 'bg-[#FDFDFD]'}`} onClick={() => handleSetInput(500)}><span>500</span><span className="ml-[2px]">৳</span></button>
+                        <button className={`rounded-[5px] px-[3.2vw] duration-500 mr-[3.2vw] border border-black border-opacity-50 ${money === 1000 ? 'relative translate-y-[-1.344vh] bg-[#FFF6A8] z-[1]' : 'bg-[#FDFDFD]'}`} onClick={() => handleSetInput(1000)}><span>1000</span><span className="ml-[2px]">৳</span></button>
+                        <button className={`rounded-[5px] px-[4.1334vw] mr-[3.6vw] duration-500 border border-black border-opacity-50 ${money === 5000 ? 'relative translate-y-[-1.344vh] bg-[#FFF6A8] z-[1]' : 'bg-[#FDFDFD]'}`} onClick={() => handleSetInput(5000)}><span>5000</span><span className="ml-[2px]">৳</span></button>
+                        <button className={`rounded-[5px] px-[2.1334vw] duration-500 border border-black border-opacity-50 ${money === 10000 ? 'relative translate-y-[-1.344vh] bg-[#FFF6A8] z-[1]' : 'bg-[#FDFDFD]'}`} onClick={() => handleSetInput(10000)}><span>10000</span><span className="ml-[2px]">৳</span></button>
                     </div>
                 </div>
                 <SwipeButtons setProcessing={setProcessing} />

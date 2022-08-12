@@ -1,4 +1,5 @@
 import { set } from 'date-fns/esm';
+import is from 'date-fns/esm/locale/is/index';
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../App';
@@ -7,17 +8,60 @@ import profile from '../Assets/pic.png'
 
 const HomeTop = () => {
     const navigate = useNavigate()
-    const { navOpen, setNavOpen } = useContext(AppContext)
+    const { navOpen, setNavOpen, setIsMenuDragging, isMenuDragging, setPageX, setCheckDrag } = useContext(AppContext)
     const [notifications, setNotifications] = useState(true)
     const handleOpen = () => {
+        setCheckDrag(() => false)
         if (!navOpen) {
-            setNavOpen(true)
+            setNavOpen(() => true)
         }
     }
     return (
-        <div className={`${style.TopPart} ${navOpen ? 'h-[255px]' : 'h-[232px]'} px-[4.2vw] pt-[64px] relative z-10 mb-[62px]`}>
+        // onMouseMove={(e) => {
+        //     if (isMenuDragging) {
+        //         setPageX(e.pageX)
+        //     }
+        //     else {
+
+        //         setPageX(0)
+        //     }
+        // }} onMouseLeave={() => {
+
+        //     setPageX(0)
+
+        //     setIsMenuDragging(false)
+        // }} onMouseUp={() => {
+
+        //     setPageX(0)
+
+        //     setIsMenuDragging(false)
+        // }}
+        //     onTouchMove={(e) => {
+
+        //         if (isMenuDragging) {
+        //             setPageX(e.touches[0].pageX)
+        //         }
+        //     }}
+        <div
+            className={`${style.TopPart} ${navOpen ? 'h-[255px]' : 'h-[232px]'} px-[4.2vw] pt-[64px] relative z-10 mb-[62px]`}>
             <div className="flex items-center justify-between mb-[36px]">
-                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer" onClick={handleOpen} >
+                <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer" onMouseDown={() => {
+                    setIsMenuDragging(true)
+
+                }}
+                    onTouchStart={(e) => {
+                        setIsMenuDragging(true)
+
+                    }}
+                    onMouseUp={() => {
+
+                        setPageX(0)
+                        setIsMenuDragging(false)
+                    }} onTouchEnd={(e) => {
+                        setPageX(0)
+                        setIsMenuDragging(false)
+                    }}
+                    onClick={handleOpen} >
                     <rect x="23.6197" y="14" width="23.6198" height="2" rx="1" transform="rotate(180 23.6197 14)" fill="white" />
                     <rect x="17.458" y="8" width="17.4581" height="2" rx="1" transform="rotate(180 17.458 8)" fill="white" />
                     <rect x="23.6197" y="2" width="23.6198" height="2" rx="1" transform="rotate(180 23.6197 2)" fill="white" />

@@ -10,7 +10,7 @@ const WithdrawProccessModal = () => {
     const { setProcessing } = useContext(AppContext)
     return (
         <div className="fixed inset-0 bg-black bg-opacity-10 backdrop-blur-[1.5px] flex justify-center items-center z-20">
-            <div className="animate__animated animate__backInDown rounded-[8px] bg-white w-[87.2%] h-[178px] relative px-2 pt-[60px] top-[1.1vh] pb-[20px]">
+            <div className="animate__animated animate__backInDown rounded-[8px] bg-white w-[87.2%] relative px-2 pt-[60px] top-[1.1vh] pb-[20px]">
                 <img src={okicon} alt="" className='absolute top-[-50px] left-[36.5%]' />
                 <img src={dots} alt="" className='absolute top-[-10px] left-[33%]' />
 

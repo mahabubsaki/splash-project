@@ -36,7 +36,7 @@ const SwipeButtons = ({ setProcessing }) => {
     return (
         <div onMouseMove={(e) => {
             if (isDragging) {
-                setPercentage(Number((e.pageX / 320) * 100))
+                setPercentage(Number((e.pageX / window.screen.width) * 100))
             }
         }}
             onMouseLeave={() => {
@@ -50,11 +50,11 @@ const SwipeButtons = ({ setProcessing }) => {
             onTouchMove={(e) => {
 
                 if (isDragging) {
-                    setPercentage(Number((Number(e.touches[0].pageX.toFixed(2) / 360) * 100).toFixed(2)))
+                    setPercentage(Number((Number(e.touches[0].pageX.toFixed(2) / window.screen.width) * 100).toFixed(2)))
                 }
             }}
         >
-            <div className="ml-[12.8vw] mb-[12.09vh] mt-[7.5268vh] bg-[#4F1EE6] mr-[13.0667vw] border border-[#4F1EE6] relative p-[1.0667vw] rounded-[13.334vw]">
+            <div className="ml-[12.8vw] mb-[14.09vh] mt-[7.5268vh] bg-[#4F1EE6] mr-[13.0667vw] border border-[#4F1EE6] relative p-[1.0667vw] rounded-[13.334vw]">
                 <span className="absolute text-center text-[white] top-1/2 -translate-y-1/2 w-full text-[4.2667vw] font-medium leading-[7.4667vw] inline-block">Swipe To Withdraw</span>
                 {complete ? <div ref={dummy} className={`py-[5.604vw] relative rounded-[13.334vw] bg-[white] cursor-pointer`}>
                     <img src={arrowswipe} alt="" className="absolute top-1/2 pointer-events-none -translate-y-1/2 left-1/2 -translate-x-1/2" />

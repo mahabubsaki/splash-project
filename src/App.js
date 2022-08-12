@@ -4,7 +4,7 @@ import './App.css'
 import 'animate.css';
 import OnBoardIndex from './Components/Pages/OnBoardIndex';
 import SignIn from './Components/Pages/SignIn';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Register from './Components/Pages/Register';
 import ForgetPass from './Components/Pages/ForgetPass';
 import ResetPass from './Components/Pages/ResetPass';
@@ -37,16 +37,87 @@ function App() {
   const [currLoc, setCurrentLoc] = useState('home')
   const [processing, setProcessing] = useState(false)
   const [openPopUp, setOpenPopUp] = useState(false)
+  const [checkDrag, setCheckDrag] = useState(false)
+  const [isCloseDragging, setIsCloseDragging] = useState(false)
+  const [pageX2, setPageX2] = useState(0)
+  const [isMenuDragging, setIsMenuDragging] = useState(false)
+  const [pageX, setPageX] = useState(0)
+  const sideBarRef = useRef()
+  const homeRef = useRef()
   const { pathname } = useLocation()
+  useEffect(() => {
+    let percentage = Number(Number(pageX / window.screen.width).toFixed(2)) * 100
+    console.log(percentage)
+    if (percentage > 22) { setNavOpen(true) }
+  }, [pageX])
+  useEffect(() => {
+    let percentage = Number(Number(pageX2 / window.screen.width).toFixed(2)) * 100
+    if (percentage < 50) { setNavOpen(false) }
+  }, [pageX2])
   return (
     <>
-      <AppContext.Provider value={{ firstOnBoard, setFirstOnBoard, secondOnBoard, setSecondOnBoard, thirdOnBoard, setThirdOnBoard, signInLeft, setSignInLeft, signPageLeft, setSignPageLeft, forgetPageLeft, setForgetPageLeft, bankOwner, setBankOwner, provider, setProvider, navOpen, setNavOpen, currLoc, setCurrentLoc, processing, setProcessing, openPopUp, setOpenPopUp }}>
-        <div className={`root ${navOpen ? 'overflow-hidden' : 'overflow-auto'} duration-300`}>
+      <AppContext.Provider value={{ firstOnBoard, setFirstOnBoard, secondOnBoard, setSecondOnBoard, thirdOnBoard, setThirdOnBoard, signInLeft, setSignInLeft, signPageLeft, setSignPageLeft, forgetPageLeft, setForgetPageLeft, bankOwner, setBankOwner, provider, setProvider, navOpen, setNavOpen, currLoc, setCurrentLoc, processing, setProcessing, openPopUp, setOpenPopUp, setIsMenuDragging, isMenuDragging, setPageX, setCheckDrag }}>
+        <div className={`root ${navOpen ? 'overflow-hidden' : 'overflow-auto'}`}>
           {!navOpen && <Navigation />}
-          <div className={`${(navOpen && pathname.includes('home')) ? `overflow-hidden` : 'overflow-auto'} ${pathname.includes('home') && 'flex  duration-300'}`}>
-            {pathname.includes('home') && <div className={`duration-300 relative ${navOpen ? '-translate-x-[0%] w-[55%]' : '-translate-x-[100%] w-0'}`}>
-              <div className={`${(pathname.includes('home') && navOpen) ? 'block' : 'hidden'}`}>
-                <VscChromeClose className='absolute -right-[38.3vw] top-[65px] text-2xl cursor-pointer' onClick={() => setNavOpen(false)}></VscChromeClose>
+          <div onMouseMove={(e) => {
+            if (isCloseDragging) {
+              setPageX2(e.pageX)
+            }
+            else {
+
+              setPageX2(0)
+            }
+            if (isMenuDragging) {
+              setPageX(e.pageX)
+            }
+            else {
+
+              setPageX(0)
+            }
+          }} onMouseLeave={() => {
+
+            setPageX2(0)
+
+            setIsCloseDragging(false)
+            setPageX(0)
+
+            setIsMenuDragging(false)
+          }} onMouseUp={() => {
+
+            setPageX2(0)
+
+            setIsCloseDragging(false)
+            setPageX(0)
+
+            setIsMenuDragging(false)
+          }}
+            onTouchMove={(e) => {
+
+              if (isCloseDragging) {
+                setPageX2(e.touches[0].pageX)
+              }
+              if (isMenuDragging) {
+                setPageX(e.touches[0].pageX)
+              }
+            }} className={`${(navOpen && pathname.includes('home')) ? `overflow-hidden` : 'overflow-auto'} ${(pathname.includes('home') && navOpen) && 'flex'}`}>
+            {pathname.includes('home') && <div ref={sideBarRef} className={`duration-300 relative w-[55%] ${navOpen ? '-translate-x-[0%]' : '-translate-x-[100%]'}`}>
+              <div className={`${(pathname.includes('home') && navOpen) ? 'block' : 'absolute'}`}>
+                <VscChromeClose onMouseDown={() => {
+                  setIsCloseDragging(true)
+
+                }}
+                  onTouchStart={(e) => {
+                    setIsCloseDragging(true)
+
+                  }}
+                  onMouseUp={() => {
+
+                    setPageX2(0)
+                    setIsCloseDragging(false)
+                  }} onTouchEnd={(e) => {
+                    setPageX2(0)
+                    setIsCloseDragging(true)
+                  }} className={`absolute -right-[38.3vw] top-[65px] text-2xl cursor-pointer ${!navOpen && 'hidden'}`} onClick={() => setNavOpen(false)}></VscChromeClose>
                 <div className="mt-[54px] ml-[7.7vw] bg-[#FFD400] bg-opacity-[37%] h-[40px] w-[40px] rounded-xl mb-[34px]">
                 </div>
                 <div className={`pl-[7.7vw] ${styles.Transactions}`}>
@@ -76,7 +147,7 @@ function App() {
                 </div>
               </div>
             </div>}
-            <div className={`${navOpen ? `translate-x-[55%] rotate-[-7.52deg] translate-y-[124px] overflow-hidden w-[45%] h-[100vh] shadiw` : 'translate-x-0 translate-y-0 rotate-0 w-auto overflow-auto h-auto'}  rounded-xl duration-300`}>
+            <div ref={homeRef} className={`${navOpen ? `translate-x-[55%] rotate-[-7.52deg] translate-y-[124px] overflow-hidden w-[45%] h-[100vh] shadiw` : 'translate-x-0 translate-y-0 rotate-0 w-auto overflow-auto h-auto'}  rounded-xl  duration-300`}>
               <Routes>
                 <Route path="/" element={<OnBoardIndex />} />
                 <Route path="/sign-in" element={<SignIn />} />
