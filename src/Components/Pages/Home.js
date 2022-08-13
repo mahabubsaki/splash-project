@@ -8,7 +8,7 @@ import Services from '../Models/Services';
 import Transactions from '../Models/Transactions';
 
 const Home = () => {
-    const { setCurrentLoc } = useContext(AppContext)
+    const { setCurrentLoc, navOpen } = useContext(AppContext)
     useEffect(() => {
         setCurrentLoc('home')
         window.scrollTo(0, 0);
@@ -18,7 +18,7 @@ const Home = () => {
             <div className="animate__animated animate__fadeInRightBig animate__faster bg-[#FFFFFF] rounded-3xl">
                 <HomeTop />
                 <Services />
-                <OfferSwipper />
+                {!navOpen && <OfferSwipper />}
                 <Transactions />
                 <Overview />
             </div>
